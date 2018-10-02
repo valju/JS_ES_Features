@@ -1,0 +1,103 @@
+/*jslint browser:true*/
+/*global console*/
+
+console.log("*********************************");
+console.log("********** functions 1 **********");
+console.log("*********************************");
+
+// foo1 and foo2 mean the same, actually internally both turned to
+// foo2 way anyway
+function foo1(a, b) {
+    "use strict";
+    var c = a + b;
+    return c;
+}
+
+// foo2 way is recommended, as this is what happens anyway,
+// just more control for the programmer
+var foo2 = function (a, b) {
+    "use strict";
+    var c = a + b;
+    return c;
+};
+
+foo1(3,4);
+foo2(3,4);
+
+// function that defines a function and returns that function (object)
+var foo3 = function (d) {
+    "use strict";
+    if(d===true) {
+        return function(text) {
+            console.log("Truthful text: " + text);
+        };
+    } else {
+        return function(text) {
+            console.log("Altenative truth text: " + text);
+        };
+    }
+};
+
+// calling both functions on one row:
+foo3(true)("It's morning.");
+
+// IIFE = Immediately Invoked Function Expression
+// alias = SIAF = Self-Invoking Anonymous Function
+
+(function () {
+    "use strict";
+    console.log("Hello from SIAF/IIFE!");
+}());
+
+(function (name) {
+    "use strict";
+    console.log("Hello " + name);
+}("Joe"));
+
+// Calling function without all of it's parameters
+// Let's say a is obligatory and b optional
+var foo4 = function (a, b) {
+    "use strict";
+    var c;
+    b = Number(b);
+
+    if(Number.isNaN(b)) {
+        c = a;
+    } else {
+        c = a + b;
+    }
+    return c;
+};
+
+console.log("foo4(3,4): " +foo4(3, 4));
+console.log("foo4(3): " +foo4(3));
+
+// Calling function without all of it's parameters
+// Let's say b is always needed and a sometimes not
+var foo5 = function (a, b) {
+    "use strict";
+    var c;
+    a = Number(a);
+
+    if(Number.isNaN(a)) {
+        c = b;
+    } else {
+        c = a + b;  
+    }
+    return c;
+};
+
+console.log("foo5(3,4): " + foo5(3, 4));
+console.log("foo5(3): " + foo5("_", 3));
+
+var foo6 = function (func) {
+    "use strict";
+    func(2, 3);
+};
+
+var bar6 = function (_, num) {
+    "use strict";
+    console.log("Number squared: " + (num*num) );
+};
+
+foo6(bar6);
