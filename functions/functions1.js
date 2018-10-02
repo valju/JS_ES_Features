@@ -5,6 +5,9 @@ console.log("*********************************");
 console.log("********** functions 1 **********");
 console.log("*********************************");
 
+// https://developer.mozilla.org/en-US/docs/Glossary/Function
+// e.g. "...A function in JavaScript is also an object..."
+
 // foo1 and foo2 mean the same, actually internally both turned to
 // foo2 way anyway
 function foo1(a, b) {

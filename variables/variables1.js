@@ -5,7 +5,7 @@ console.log("********************************************");
 console.log("*********** variables and scopes ***********");
 console.log("********************************************");
 
-// Two global variable
+// Two global variables https://developer.mozilla.org/en-US/docs/Glossary/Scope 
 var a;         // variable defined, value undefined
 var b = 3;     // variable defined, value defined
 //var f;      // This would fix the implicit global scope var prob
@@ -16,6 +16,7 @@ function variable_foo(c, d) {
     var e;   // variable would be _hoisted_ here anyway
     // c and d are function parameters, i.e. function-scope
     // variables that might get value from caller
+    // https://developer.mozilla.org/en-US/docs/Glossary/Hoisting 
 
     e = c + d;    // e is a function-scope variable
     console.log("e: " + e);

@@ -9,13 +9,14 @@ console.log("*********************************************");
 function variable2_foo(c, d) {
     "use strict";
     let g = 5;   // function scope let variable
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let 
 
     if(g>0) {
         let h = 7;
         console.log("h: " + h);
     }
 
-    //console.log("h outside the if: " + h); // Error, h is if-scoped 
+    //console.log("h outside the if: " + h); // Error, h is if block scoped 
     // "ReferenceError: h is not defined"
 }
 
@@ -25,6 +26,7 @@ function variable2_foo(c, d) {
 // Function call (~invocation, execution)
 variable2_foo(a, b);
 
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const 
 // const is same as let (scope is NOT global or function, it's: local)
 // Local scope means inside the outer { and  } marks, or inside for
 // for( let i=i; i<10; i++ ) { console.log(i); }
@@ -45,4 +47,6 @@ const j = {firstName:"Joe", lastName:"Smith"};
 // with const!!!
 j.firstName="Ann";
 j.lastName="Jones";
+
+console.log("Put a break point here for stopping the debugger");
 
