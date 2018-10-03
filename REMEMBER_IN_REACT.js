@@ -8,7 +8,7 @@
 
 // 3. How to read this:   <SomeElement attribute={{a:foo}} />  ...
 // The outer {   } take us from the JSX "XML" mode to JavaScript mode. Then {a:foo}
-// would just mean creating an ad-hoc object with property called 'a' with it's
+// would just mean creating an ad-hoc object with property called 'a' with its
 // value copied from variable foo.
 
 // 4. In many places you'll need to use the arrow function in call-back function definition.
