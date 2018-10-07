@@ -11,6 +11,10 @@
 // would just mean creating an ad-hoc object with property called 'a' with its
 // value copied from variable foo.
 
+// 3.b Like above, also in  <SomeElement attribute={{a}} /> we would create
+// a JavaScript object, this time with {a} = object with one property 'a'
+// with value copied from a variable called 'a' in the current context.
+
 // 4. In many places you'll need to use the arrow function in call-back function definition.
 // A normal function would not bind the "this" to the outer context = component, like we want to happen.
 
