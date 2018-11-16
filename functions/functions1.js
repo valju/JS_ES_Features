@@ -46,6 +46,7 @@ foo3(true)("It's morning.");
 
 // IIFE = Immediately Invoked Function Expression
 // alias = SIAF = Self-Invoking Anonymous Function
+// https://developer.mozilla.org/en-US/docs/Glossary/IIFE
 
 (function () {
     "use strict";
@@ -75,7 +76,7 @@ var foo4 = function (a, b) {
 console.log("foo4(3,4): " +foo4(3, 4));
 console.log("foo4(3): " +foo4(3));
 
-// Calling function without all of it's parameters
+// Calling function without _all_ of it's parameters
 // Let's say b is always needed and a sometimes not
 var foo5 = function (a, b) {
     "use strict";

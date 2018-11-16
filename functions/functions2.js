@@ -39,13 +39,13 @@ let a,b,c,d;
 // That anonymous function is immediately called with the second ()
 // Where to put the wrapper (    ) around seems to be a debatable thing...
 
-// ... the style accepted by jslint.com
-(()=>42());
-var returnedValue1 = (()=>42());
+// ... the style accepted by jslint.com     
+(()=>42());    // Definition & call
+var returnedValue1 = (()=>42());  // Definition&call, return value to console
 
-// Second style used in most examples
-(()=>42)();
-var returnedValue2 = (()=>42)();
+// Second style used in most of the examples => Learn this, easier to grasp
+(()=>42)();    // Definition & call
+var returnedValue2 = (()=>42)();  // Definition&call, return value to console
 
 
 (name => "Hello " + name)("Joe");

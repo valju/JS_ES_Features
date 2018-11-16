@@ -39,3 +39,20 @@ console.log("*******************************");
 
 // console.log("abc: " + abc);  // This would be an error, out of scope
 console.log("Put another break point here to see the values in the debugger");
+
+/*
+    // This, from above...
+    const {
+        ghi,
+        def,
+        abc,   
+    } = a;
+
+    // ... could be written also like this:
+    const ghi = a.ghi;
+    const def = a.def;
+    const abc = a.abc;
+
+    // In React examples, the first is usually laid out on one line:
+    const { ghi, def, abc, } = a;
+*/
