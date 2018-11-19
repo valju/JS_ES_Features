@@ -13,9 +13,11 @@ var sum = function (num1, num2=3) {
     return result;
 }
 
+console.log(sum(4,11));         // Will print 15, and not use the default value
+
 console.log(sum(4,3));          // Will print 7
-console.log(sum(4));            // Will also print 7, as num2 defaults to 3 if not given
-console.log(sum(4,undefined))   // Will also print 7, as num2 defaults to 3 if num2 undefined
+console.log(sum(4));            // Will also print 7, as missing(=undefined) num2 defaults to 3
+console.log(sum(4,undefined))   // Will also print 7, as undefinded num2 defaults to 3
 
 console.log(sum(4,null));       // Won't default to 3, but turns null into 0 => 4+0=4
 
