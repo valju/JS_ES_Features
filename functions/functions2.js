@@ -39,7 +39,7 @@ let a,b,c,d;
 // That anonymous function is immediately called with the second ()
 // Where to put the wrapper (    ) around seems to be a debatable thing...
 
-// ... the style accepted by jslint.com     
+// ... the style accepted by jslint.com, but does it work? Forget this!     
 (()=>42());    // Definition & call
 var returnedValue1 = (()=>42());  // Definition&call, return value to console
 
@@ -47,9 +47,9 @@ var returnedValue1 = (()=>42());  // Definition&call, return value to console
 (()=>42)();    // Definition & call
 var returnedValue2 = (()=>42)();  // Definition&call, return value to console
 
+//console.log(   (name => "Hello " + name("Joe"))   );
+console.log(   (name => "Hello " + name)("Joe")   );
 
-(name => "Hello " + name)("Joe");
-(name => "Hello " + name("Joe"));
 
 // Remember about arrow functions:
 

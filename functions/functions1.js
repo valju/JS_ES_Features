@@ -8,8 +8,9 @@ console.log("*********************************");
 // https://developer.mozilla.org/en-US/docs/Glossary/Function
 // e.g. "...A function in JavaScript is also an object..."
 
+// Function statement / (function declaration)
 // foo1 and foo2 mean the same, actually internally both turned to
-// foo2 way anyway
+// foo2 way anyway. 
 function foo1(a, b) {
     "use strict";
     var c = a + b;
@@ -17,7 +18,8 @@ function foo1(a, b) {
 }
 
 // foo2 way is recommended, as this is what happens anyway,
-// just more control for the programmer
+// just more control for the programmer. 
+// With a var that will be assigne a function expression.
 var foo2 = function (a, b) {
     "use strict";
     var c = a + b;
@@ -99,6 +101,10 @@ var foo6 = function (func) {
     func(2, 3);
 };
 
+// If we need to define an event handler or something,
+// And the system wants to give us two arguments
+// but we don't need the _first_ one(s), _ is sometimes
+// used as the name of the non-needed parameter
 var bar6 = function (_, num) {
     "use strict";
     console.log("Number squared: " + (num*num) );
