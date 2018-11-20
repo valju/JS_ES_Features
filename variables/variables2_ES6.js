@@ -18,7 +18,7 @@ function variable2_foo(c,d) {
 
     //console.log("h outside the if: " + h); // Error, h is if block scoped 
     // "ReferenceError: h is not defined"
-    console.log("Printing values we get later from global scope values"
+    console.log("Printing values we get later from global scope values "
                 +c +" and " +d);    // See function call below
 }
 
@@ -26,7 +26,7 @@ function variable2_foo(c,d) {
 // "ReferenceError: g is not defined"
 
 // Function call (~invocation, execution)
-variable2_foo(a,b);   // Using global scope variable created by variables1.js
+variable2_foo(a,b); // Using global scope variables created by variables1.js
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const 
 // const is same as let (scope is NOT global or function, it's: local)
@@ -46,9 +46,10 @@ const j = {firstName:"Joe", lastName:"Smith"};
 // to the first object.
 
 // But, the non-immediate, next-level, values are NOT protected 
-// with const!!!
+// with const!!! Only j (the reference variable, and the value,
+// the reference to the object) is const
 j.firstName="Ann";
 j.lastName="Jones";
+j.phoneNumber="050-1234567";
 
 console.log("Put a break point here for stopping the debugger");
-

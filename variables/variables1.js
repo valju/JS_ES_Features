@@ -34,5 +34,6 @@ a = 6;
 // e = 13;  // This is an error! Undeclared/undefined 'e'
 f = 15;     // This is bad coding, (implicit global scope var)
 console.log("f after function:" + f);
-// Function call (~invocation, execution)
+
+// Function call (~invocation, execution) happens after all definitions
 variable_foo(a, b);

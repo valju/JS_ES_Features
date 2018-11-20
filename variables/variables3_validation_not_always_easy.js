@@ -28,6 +28,7 @@ console.log("**********************************************");
 // From somebody else's code we get: Any value below is possible
 
 var array = [
+    // falsy values:
     false,
     null,
     undefined,
@@ -36,11 +37,14 @@ var array = [
     '',
     "",
 
+    // possible special cases:
     "true",
     "false",
-    true,
+    true,      // was commented out, as the true handling missing
     " ",
 
+    // 'normal' input data possibilities from web page
+    // or JSON. Then even numbers usually first as text
     "abc",
     " abc ",
     "two",
@@ -52,7 +56,11 @@ var array = [
     " 5 ",
     "6",
     "ö",
-    /[\u0400-\u04FF]+/g,
+
+    // Regular expression,(RegExp) is also a JavaScript 
+    // data type. Thus let's test one regexp value. 
+    // Should not be accepted:
+    /[\u0400-\u04FF]+/g,    
 ];
 
 for(let i=0; i<array.length; i++) {
@@ -60,24 +68,36 @@ for(let i=0; i<array.length; i++) {
     // let inputTrimmed = inputText.trim(); // Might be extra in JS
     let number = Number(inputText);
 
-    // "falsy logic version"
-    if(!inputText || 
-        inputText.trim().length===0 || 
+    // "falsy logic version" = taking out problems
+    if(!inputText || typeof(array[i])==="boolean" ||
+        (typeof(inputText)==="string" && inputText.trim().length===0) || 
         Number.isNaN(number) || 
         number < 0 || 
         number > 5 ) {
-        console.log("problem: >" + inputText +"< with number conversion into: " +number);
+        
+        // If the 'falsy' 
+        if(typeof(array[i])==="string") {
+            console.log("problem: >'" + inputText +"'< with number conversion into: " +number);
+        } else {
+            console.log("problem: >" + inputText +"< with number conversion into: " +number);
+        }
+        
     }
 
+    // ifs are not connected, and that's on purpose, for demonstration
 
-    // "truthy logic version"
+    // "truthy logic version" = the correct 0-5 values
     if( inputText && 
-        inputText.trim().length!==0 && 
+        (typeof(inputText)==="string" && inputText.trim().length!==0) && 
         !Number.isNaN(number) && 
         number >= 0 && 
         number <= 5 ) {
-        console.log("correct: *" + inputText +"* with number conversion into: " +number);
-    }
+            if(typeof(array[i])==="string") { 
+                console.log("correct: *'" + inputText +"'* with number conversion into: " +number);
+            } else {
+                console.log("correct: *" + inputText +"* with number conversion into: " +number);
+            }
+        }
 
     // BTW. first making this an if-else if-else if structure the
     // debugging would show better where each value goes
