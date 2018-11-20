@@ -56,5 +56,4 @@ var l = {};    // Empty object crated (+var defined + assigment)
     // add field def, replace value of abc
 
     console.log("Put a break point here for stopping the debugger");
-    
 }

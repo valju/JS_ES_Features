@@ -6,7 +6,7 @@ console.log("*********** let, const and scopes ***********");
 console.log("*********************************************");
 
 // Function definition (~function creation)
-function variable2_foo(c, d) {
+function variable2_foo(c,d) {
     "use strict";
     let g = 5;   // function scope let variable
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let 
@@ -18,20 +18,22 @@ function variable2_foo(c, d) {
 
     //console.log("h outside the if: " + h); // Error, h is if block scoped 
     // "ReferenceError: h is not defined"
+    console.log("Printing values we get later from global scope values"
+                +c +" and " +d);    // See function call below
 }
 
 //console.log("g after function:" + g); // Error, g doesn't exist in this scope
 // "ReferenceError: g is not defined"
 
 // Function call (~invocation, execution)
-variable2_foo(a, b);
+variable2_foo(a,b);   // Using global scope variable created by variables1.js
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const 
 // const is same as let (scope is NOT global or function, it's: local)
 // Local scope means inside the outer { and  } marks, or inside for
 // for( let i=i; i<10; i++ ) { console.log(i); }
 
-// BUT for const the immediate value is constant:
+// BUT for const the _immediate_ value is constant:
 
 const i = 55;
 // i++;  // "TypeError: Assignment to constant variable." i++ means i=i+1
