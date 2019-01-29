@@ -46,15 +46,44 @@ var foo3 = function (d) {
 // calling both functions on one row:
 foo3(true)("It's morning.");
 
-// IIFE = Immediately Invoked Function Expression
-// alias = SIAF = Self-Invoking Anonymous Function
+// ... or with two lines
+var foo3b = foo3(true);
+foo3b("It's morning.");
+
+// extra example
+foo3b = foo3(false);
+foo3b("I love mornings.");
+
+
+// IIFE = Immediately Invoked Function Expression 
+// (Invoked = We define and we call, right away)
+// Not so good alias = SIAF = Self-Invoking Anonymous Function
+// Not so good alias = SEAF = Self-Executing Anonymous Function
 // https://developer.mozilla.org/en-US/docs/Glossary/IIFE
 
+// Learn the first syntax, even if JSLint.com doesn't like it
+/*global console*/
+(function () {
+    "use strict";
+    console.log("Hello from SIAF/IIFE!");
+})();
+
+/*global console*/
 (function () {
     "use strict";
     console.log("Hello from SIAF/IIFE!");
 }());
 
+
+// Real example, the learnable way, not liked by JSLint.com
+/*global console*/
+(function (name) {
+    "use strict";
+    console.log("Hello " + name);
+})("Joe");
+
+// Confusing second version, liked by JSLint.com
+/*global console*/
 (function (name) {
     "use strict";
     console.log("Hello " + name);
@@ -64,6 +93,7 @@ foo3(true)("It's morning.");
 // Let's say a is obligatory and b optional
 var foo4 = function (a, b) {
     "use strict";
+
     var c;
     b = Number(b);
 
@@ -94,7 +124,7 @@ var foo5 = function (a, b) {
 };
 
 console.log("foo5(3,4): " + foo5(3, 4));
-console.log("foo5(3): " + foo5("_", 3));
+console.log("foo5(3): " + foo5(3));
 
 var foo6 = function (func) {
     "use strict";

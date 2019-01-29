@@ -36,6 +36,8 @@ var array = [
     NaN,
     '',
     "",
+    ``,
+    document.all,
 
     // possible special cases:
     "true",
@@ -51,9 +53,11 @@ var array = [
     "-1",
     "0",
     "1",
+    1,
     "4",
     "5",
     " 5 ",
+    5,
     "6",
     "ö",
 
@@ -69,7 +73,9 @@ for(let i=0; i<array.length; i++) {
     let number = Number(inputText);
 
     // "falsy logic version" = taking out problems
-    if(!inputText || typeof(array[i])==="boolean" ||
+    // It only has OR => if any is true, doesn't check the next one at all!!
+    // "Shortcut evaluation"
+    if( (!inputText && inputText !==0) || typeof(array[i])==="boolean" ||
         (typeof(inputText)==="string" && inputText.trim().length===0) || 
         Number.isNaN(number) || 
         number < 0 || 
