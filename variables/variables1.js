@@ -33,7 +33,8 @@ a = 6;
 // c = 11;  // This is an error! Undeclared/undefined 'c'
 // e = 13;  // This is an error! Undeclared/undefined 'e'
 f = 15;     // This is bad coding, (implicit global scope var)
-console.log("f after function:" + f);
+console.log("f after function definition:" + f);
 
 // Function call (~invocation, execution) happens after all definitions
 variable_foo(a, b);
+console.log("f after function call:" + f);
