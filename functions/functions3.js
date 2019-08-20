@@ -11,7 +11,7 @@ console.log("**************************************************");
 var sum = function (num1, num2=3) {
     var result = num1 + num2;
     return result;
-}
+};
 
 console.log(sum(4,11));         // Will print 15, and not use the default value
 

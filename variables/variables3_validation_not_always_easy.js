@@ -5,8 +5,7 @@ console.log("**********************************************");
 console.log("*********** checking 'input' value ***********");
 console.log("**********************************************");
 
-// NOT COMPLETED, BUT START OF AN IDEA OF HOW
-// COMPLICATED INPUT VALUE VALIDATION MIGHT GET
+// AN IDEA OF HOW COMPLICATED INPUT VALUE VALIDATION MIGHT GET
 
 // IN THIS CASE FINALLY THE ACCEPTED ONES WOULD
 // BE Number values from 0 to 5.
@@ -81,11 +80,13 @@ for(let i=0; i<array.length; i++) {
         number < 0 || 
         number > 5 ) {
         
-        // If the 'falsy' 
+        // If the 'falsy' version 
         if(typeof(array[i])==="string") {
-            console.log("problem: >'" + inputText +"'< with number conversion into: " +number);
+            console.log("problem: >'" + inputText 
+                        +"'< with number conversion into: " +number);
         } else {
-            console.log("problem: >" + inputText +"< with number conversion into: " +number);
+            console.log("problem: >" + inputText 
+                        +"< with number conversion into: " +number);
         }
         
     }
@@ -99,9 +100,11 @@ for(let i=0; i<array.length; i++) {
         number >= 0 && 
         number <= 5 ) {
             if(typeof(array[i])==="string") { 
-                console.log("correct: *'" + inputText +"'* with number conversion into: " +number);
+                console.log("correct: *'" + inputText 
+                            +"'* with number conversion into: " +number);
             } else {
-                console.log("correct: *" + inputText +"* with number conversion into: " +number);
+                console.log("correct: *" + inputText 
+                            +"* with number conversion into: " +number);
             }
         }
 

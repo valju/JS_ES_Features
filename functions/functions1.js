@@ -29,6 +29,8 @@ var foo2 = function (a, b) {
 foo1(3,4);
 foo2(3,4);
 
+// ****************************************************************************
+
 // function that defines a function and returns that function (object)
 var foo3 = function (d) {
     "use strict";
@@ -54,26 +56,20 @@ foo3b("It's morning.");
 foo3b = foo3(false);
 foo3b("I love mornings.");
 
+// ****************************************************************************
 
 // IIFE = Immediately Invoked Function Expression 
-// (Invoked = We define and we call, right away)
-// Not so good alias = SIAF = Self-Invoking Anonymous Function
-// Not so good alias = SEAF = Self-Executing Anonymous Function
 // https://developer.mozilla.org/en-US/docs/Glossary/IIFE
+// (Invoked = We define and we call, right away)
+// Incorrect old alias = SIAF = Self-Invoking Anonymous Function, FORGET!
+// Incorrect old alias = SEAF = Self-Executing Anonymous Function, FORGET!
 
-// Learn the first syntax, even if JSLint.com doesn't like it
+// Learn this syntax, even if JSLint.com doesn't like it
 /*global console*/
 (function () {
     "use strict";
-    console.log("Hello from SIAF/IIFE!");
+    console.log("Hello from IIFE!");
 })();
-
-/*global console*/
-(function () {
-    "use strict";
-    console.log("Hello from SIAF/IIFE!");
-}());
-
 
 // Real example, the learnable way, not liked by JSLint.com
 /*global console*/
@@ -82,12 +78,7 @@ foo3b("I love mornings.");
     console.log("Hello " + name);
 })("Joe");
 
-// Confusing second version, liked by JSLint.com
-/*global console*/
-(function (name) {
-    "use strict";
-    console.log("Hello " + name);
-}("Joe"));
+// ****************************************************************************
 
 // Calling function without all of it's parameters
 // Let's say a is obligatory and b optional
@@ -128,7 +119,7 @@ console.log("foo5(3): " + foo5(3));
 
 var foo6 = function (func) {
     "use strict";
-    func(2, 3);
+    func(2,3);
 };
 
 // If we need to define an event handler or something,

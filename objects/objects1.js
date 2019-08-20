@@ -40,7 +40,10 @@ var l = {};    // Empty ad-hoc object crated (+var defined + assigment)
     // two different things, even if they support some of the same
     // features.
 
-    let f = {...c};  // Firstly:  {} -> _new_ object created, 
+    
+    // ****************************************************************************
+
+    let f = {...c};  // First:  {} -> _new_ object created, 
                      // Second: ...c means copy all field names and values 
                      // from object c to the newly created, separate object 
     // ...x is called the spread notation / spread syntax:
@@ -58,9 +61,6 @@ var l = {};    // Empty ad-hoc object crated (+var defined + assigment)
 
     let m = {...k};  // exact _copy_ of the object created
     m.abc=false;     // then changing one property
-    
-    // let m2 = ({...k}).abc=false; 
-    // For a reason this is not allowed!!! Reason?
 
     let n = {...k, abc:false};   // replace field abc
     let o = {...k, def:123, abc:"foobarish"}; 

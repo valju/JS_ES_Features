@@ -20,7 +20,7 @@ let fooar1 = () => {
 
 fooar1();
 
-// With exactly one parameter, the parameter list
+// With exactly ONE parameter, the parameter list
 // parentheses COULD BE left out. (But not for 0, 2 or more)
 let fooar2 = name => {
     console.log("Hello " + name + "!");
@@ -31,21 +31,16 @@ fooar2("Joe");
 // IIFE with arrow function
 let a,b,c,d;
 
-// Two ways to write same IIFE. 
 // 1. Anonymous function defined with arrow notation
 // 2. No params -> empty parameter list ()
 // 3. implicit (= automatic) return because of no block { } brackets
 // Returns value 42
 // That anonymous function is immediately called with the second ()
-// Where to put the wrapper (    ) around seems to be a debatable thing...
-
-// ... the style accepted by jslint.com, but does it work? Forget this!     
-(()=>42());    // Definition & call
-var returnedValue1 = (()=>42());  // Definition&call, return value to console
-
-// Second style used in most of the examples => Learn this, easier to grasp
 (()=>42)();    // Definition & call
-var returnedValue2 = (()=>42)();  // Definition&call, return value to console
+
+var returnedValue2 = (()=>42)();  // Definition&call, return value to a variable
+
+(()=>{return 42;})();  // The same IIFE A bit longer way, with explicit return
 
 //console.log(   (name => "Hello " + name("Joe"))   );
 console.log(   (name => "Hello " + name)("Joe")   );
@@ -65,9 +60,8 @@ console.log(   (name => "Hello " + name)("Joe")   );
 // (   ) are needed around the object, otherwise 
 // {} would be confused for a block:
       () => ({a:123, b:456})
-
-// 4. if using the keyword 'this', the this refers to the outer object
-// and not to the function object itself!
+// 4. if using the keyword 'this', the 'this' refers to the outer object
+// and not to the function object itself! 
 // -> sometimes you need arrow function, and normal would not work!!!
 // Typically in some kind of event-handler function
 
@@ -81,7 +75,7 @@ let answer = (()=>42)();
 
 // Writing THE SAME with traditional syntaxt takes 24-26 more
 // = 39 characters altogether. Of course only very short
-// functions have this kind of 300% bloating.
+// functions have this huge 3 x bloating <> performance effect.
 
 let answer = (function () {
     return 42;
