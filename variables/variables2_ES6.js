@@ -12,7 +12,7 @@ function variable2_foo(c,d) {
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let 
 
     if(g>0) {
-        let h = 7;
+        let h = 7;              // if scope let variable
         console.log("h: " + h);
     }
 
