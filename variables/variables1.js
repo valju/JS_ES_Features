@@ -38,3 +38,20 @@ console.log("f after function definition:" + f);
 // Function call (~invocation, execution) happens after all definitions
 variable_foo(a, b);
 console.log("f after function call:" + f);
+
+
+/*  Example of how VARIABLE HOISTING sometimes makes things tricky:
+
+nameX = "Joe";      // implicit global scoped var
+                    // example would work same if here: var nameX = "Joe";
+
+func zoo() {
+                                   // <= here _hoisted_: var nameX;
+    nameX ="Mike"                  // thus this refers to f-scoped, not global
+
+    for(var i=0; i<10; i++) {
+        var nameX = "Sue";         // this will become actually:  nameX = "Sue";
+    }
+}
+
+*/
