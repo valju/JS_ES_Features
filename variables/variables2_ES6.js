@@ -38,7 +38,7 @@ variable2_foo(a,b); // Using global scope variables created by variables1.js
 const i = 55;
 // i++;  // "TypeError: Assignment to constant variable." i++ means i=i+1
 
-// With objects it's a bit more complicated
+// With objects it's a bit more complicated   - Class drawing made this clear?
 const j = {firstName:"Joe", lastName:"Smith"};
 //j = {firstName:"Ann", lastName:"Jones"};   // Error!!!
 // TypeError: Assignment to constant variable.
@@ -47,9 +47,9 @@ const j = {firstName:"Joe", lastName:"Smith"};
 
 // But, the non-immediate, next-level, values are NOT protected 
 // with const!!! Only j (the reference variable, and the value,
-// the reference to the object) is const
-j.firstName="Ann";
-j.lastName="Jones";
-j.phoneNumber="050-1234567";
+// this time the reference to the object) is const
+j.firstName="Ann";            // OK! the object reference was not changed
+j.lastName="Jones";           // OK! the object reference was not changed
+j.phoneNumber="050-1234567";  // OK! the object reference was not changed
 
 console.log("Put a break point here for stopping the debugger");
