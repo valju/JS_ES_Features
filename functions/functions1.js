@@ -127,8 +127,8 @@ var fooFromSomeFramework = function (func) {
 // And the system wants to give us two arguments
 // but we don't need the _first_ one(s), _ is sometimes
 // used as the _name_ of the non-needed parameter
-// (Just a custom by programmers to tell others,
-// they don't use parameter _ for anything)
+// (Just a custom by programmers to tell others that
+//  they don't use parameter _ for anything)
 var bar6 = function (_, num) {
     "use strict";
     console.log("Number squared: " + (num*num) );
