@@ -10,8 +10,8 @@ console.log("*********************************");
 // Object initilizers and such
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer
 
-var k = [];    // Empty ad-hoc array object created (+var defined + assigment)
-var l = {};    // Empty ad-hoc object crated (+var defined + assigment)
+var k = [];    // 1. Empty ad-hoc array object created (+ 2.var defined + 3.assigment)
+var l = {};    // 1. Empty ad-hoc object crated (+2.var defined + 3.assigment)
 
 // here we have created a scope without function/if/for etc. This is allowed.
 {
