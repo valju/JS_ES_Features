@@ -8,7 +8,7 @@ console.log("*********************************");
 // https://developer.mozilla.org/en-US/docs/Glossary/Function
 // e.g. "...A function in JavaScript is also an object..."
 
-// Function statement / (function declaration)
+// Function Statement / (function declaration)
 // foo1 and foo2 mean the same, actually internally both turned to
 // foo2 way anyway. 
 function foo1(a, b) {
@@ -19,7 +19,7 @@ function foo1(a, b) {
 
 // foo2 way is recommended, as this is what happens anyway,
 // just more control for the programmer. 
-// With a var that will be assigne a function expression.
+// With a var that will be assigned a Function Expression.
 var foo2 = function (a, b) {
     "use strict";
     var c = a + b;
@@ -40,7 +40,7 @@ var foo3 = function (d) {
         };
     } else {
         return function(text) {
-            console.log("Altenative truth text: " + text);
+            console.log("Alternative truth text: " + text);
         };
     }
 };
@@ -80,8 +80,9 @@ foo3b("I love mornings.");
 
 // ****************************************************************************
 
-// Calling function without all of it's parameters
+// Calling function without all of its parameters
 // Let's say a is obligatory and b optional
+// (Optional parameters omitted from the end of parameter list!)
 var foo4 = function (a, b) {
     "use strict";
 
@@ -115,20 +116,22 @@ var foo5 = function (a, b) {
 };
 
 console.log("foo5(3,4): " + foo5(3, 4));
-console.log("foo5(3): " + foo5(3));
+console.log("foo5(null,4): " + foo5(null,4));   // null or any other NaN
 
-var foo6 = function (func) {
+var fooFromSomeFramework = function (func) {
     "use strict";
-    func(2,3);
+    func(2,3);   // Framework calls the given function with two parameters
 };
 
 // If we need to define an event handler or something,
 // And the system wants to give us two arguments
 // but we don't need the _first_ one(s), _ is sometimes
-// used as the name of the non-needed parameter
+// used as the _name_ of the non-needed parameter
+// (Just a custom by programmers to tell others,
+// they don't use parameter _ for anything)
 var bar6 = function (_, num) {
     "use strict";
     console.log("Number squared: " + (num*num) );
 };
 
-foo6(bar6);
+fooFromSomeFramework(bar6);
