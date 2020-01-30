@@ -33,7 +33,8 @@ var l = {};    // 1. Empty ad-hoc object crated (+2.var defined + 3.assigment)
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#New_notations_in_ECMAScript_2015
 
     console.log("e: ");
-    console.dir(e);
+    console.dir(e); // prints that object and its substructures (sometimes) nicely
+                    // don't give it any added text => decomposes that String then
 
     // https://developer.mozilla.org/en-US/docs/Web/API/Console
     // Remember that Browser console and Server (Node?) console are
@@ -55,6 +56,13 @@ var l = {};    // 1. Empty ad-hoc object crated (+2.var defined + 3.assigment)
     let i = [...g];   // exact _copy_ of the array created
     let j = [...g, 8]; // _copy_ (=similar but separate object) of the array, 
     // Plus one more item, 8, added!
+    
+    // Two more advanced examples:
+    let j2 = [...g,...g];
+    let j3 = [...g,g];
+    g[1] = 222;  // Run debugger to see which objects are
+                 // separate and which are references to
+                 // same object (second item becomes 222)
 
     let k = {abc:true, xyz:false};  // object created
     let l = {...k};  // exact _copy_ of the object created
