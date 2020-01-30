@@ -5,7 +5,8 @@ console.log("*******************************");
 console.log("*********** objects 2 *********");
 console.log("*******************************");
 
-// some local scope (some block for no other reason) starts
+// some local scope starts (some block for no other reason,
+// though could be e.g. some function or object) 
 {
     // Creating a local variable (let) and and object to it:
     let a = {abc:123, def:456, ghi:789,};
@@ -20,9 +21,11 @@ console.log("*******************************");
         ghi,
         def,
         abc,
-        xyz, // This went through in Firefox, but will get value: undefined
-    } = a;  // Group assignment from object a to each const !!!
+        //xyz, // This went through in Firefox, but will get value: undefined
+     } = a;  // Destructure the object a to each const !!!
     
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Object_destructuring
+
     console.log("abc: " + abc);  // Prints from local const abc
     // abc++;   // This would be an error, cannot change const abc
 
@@ -70,4 +73,27 @@ console.log("Put another break point here to see the values in the debugger");
     } = a;  // Group assignment from object a to each const !!!
 
     console.log("The value of const xyz: " +xyz);
+*/
+
+/*   Similar way, destructuring an Array
+
+// Creating a local variable (let) and and object to it:
+    let b = [123, 456, 789,];
+
+    // Defining three local consts with the destructure structure
+    // to the local scope!
+    // => here [a,b,c] confusingly doesn't mean creating an object!
+    const [
+        jkl,
+        mno,
+        prq,
+        //xyz, // This went through in Firefox, but will get value: undefined
+     ] = b;  // Destructure the array a to each const !!!
+    
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Array_destructuring
+
+    // ... could be written also like this: (Doesn't make any sense!)
+    const jkl = b[0];
+    const mno = b[1];
+    const prq = b[2];
 */
