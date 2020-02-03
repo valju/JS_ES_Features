@@ -89,3 +89,15 @@ let answer = (function () {
 })();
 
 */
+
+// Random, but important example of many things:
+// - filter function creating a new array out of selected items
+// - passing the selection function (object) to the filter function
+// - arrow function with implicit return
+// - skipping first parameter with dummy parameter name _ 
+
+const peopleArray = ['Adam','Bertha','Cecilia','David','Elvis','Feodor'];
+const firstTeam = peopleArray.filter(   (_,index) => index%2==0  );
+console.dir(firstTeam);
+// firstTeam arrayis like this: ['Adam', 'Cecilia', 'Elvis']    
+// as they had even indexes 0,2,4
