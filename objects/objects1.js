@@ -18,7 +18,7 @@ var l = {};    // 1. Empty ad-hoc object crated (+2.var defined + 3.assigment)
     let a = "foo";
     let b = "bar";
 
-    let c = {a,b};                // ad-hoc object created {a:"foo",b:"bar"}
+    let c = {a,b};      // ad-hoc object created {a:"foo",b:"bar"}
     console.log("c: ");
     console.dir(c);
 
@@ -28,14 +28,15 @@ var l = {};    // 1. Empty ad-hoc object crated (+2.var defined + 3.assigment)
 
     // Check this out! Used in some React code, if e.g. making same
     // event-handler to handle multiple fields same way
-    let e = {[a]:a,[b]:b};  // object created: {foo:"foo",bar:"bar"}
+    let e  = {[a]:11,[b]:22};  // object created: {foo:11,bar:22}
+    let e2 = {[a]:a,[b]:b};    // object created: {foo:"foo",bar:"bar"}
     // [a] is called computed property name (ES6) 
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#New_notations_in_ECMAScript_2015
 
     console.log("e: ");
     console.dir(e); // prints that object and its substructures (sometimes) nicely
                     // don't give it any added text => decomposes that String then
-
+    console.dir(e2);
     // https://developer.mozilla.org/en-US/docs/Web/API/Console
     // Remember that Browser console and Server (Node?) console are
     // two different things, even if they support some of the same
