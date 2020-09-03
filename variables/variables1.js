@@ -8,23 +8,25 @@ console.log("********************************************");
 // Two global variables https://developer.mozilla.org/en-US/docs/Glossary/Scope 
 var a;         // variable defined, value undefined
 var b = 3;     // variable defined, value defined
-//var f;      // This would fix the implicit global scope var prob
+//var f;      // This would fix the implicit global scope var prob   = G
 
 // Function definition (~function creation)
 function variable_foo(c, d) {
     "use strict";
     var e;   // variable would be _hoisted_ here anyway
-    // c and d are function parameters, i.e. function-scope
+    // c and d are function parameters, i.e. function-scope   =  F   (GF)
     // variables that might get value from caller
     // https://developer.mozilla.org/en-US/docs/Glossary/Hoisting 
+    // "Planned Parameters" c and d
 
+    // c = c + 3; // you could use the parameter variable as any local var
     e = c + d;    // e is a function-scope variable
     console.log("e: " + e);
 
     f = e * 2;    // f is _implicit_ global scope variable f (Bad!!!)
     // Of course 'var f;' could be written in another file.
     // But all in all we _try_ to avoid using global scope variables.
-
+    
     console.log("f: " + f);
 }
 
@@ -36,7 +38,8 @@ f = 15;     // This is bad coding, (implicit global scope var)
 console.log("f after function definition:" + f);
 
 // Function call (~invocation, execution) happens after all definitions
-variable_foo(a, b);
+// 
+variable_foo(a, b);        // "Actual Arguments" values of a and b
 console.log("f after function call:" + f);
 
 

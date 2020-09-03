@@ -63,6 +63,7 @@ var array = [
     // Regular expression,(RegExp) is also a JavaScript 
     // data type. Thus let's test one regexp value. 
     // Should not be accepted:
+    
     /[\u0400-\u04FF]+/g,    
 ];
 
