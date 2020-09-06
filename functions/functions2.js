@@ -9,7 +9,7 @@ console.log("*************************************************************");
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
 /*
     "An arrow function expression has a shorter syntax than a function 
-    expression and does not have its own this, arguments, super, or 
+    expression and does not have its own 'this', arguments, super, or 
     new.target. These function expressions are best suited for non-method 
     functions, and they cannot be used as constructors."
 */
@@ -22,11 +22,17 @@ fooar1();
 
 // With exactly ONE parameter, the parameter list
 // parentheses COULD BE left out. (But not for 0, 2 or more)
+// But, we should never optimize writing speed. 
+// Most likely with () faster to recongize/read/understand/validate/audit
 let fooar2 = name => {
     console.log("Hello " + name + "!");
 };
 
 fooar2("Joe");
+
+// What is this???
+(()=>42)();
+
 
 // IIFE with arrow function
 
@@ -35,17 +41,17 @@ fooar2("Joe");
 // 3. implicit (= automatic) return because of no block { } brackets
 // Returns value 42
 // That anonymous function is immediately called with the second ()
-(()=>42)();    // Definition & call, though returned 42 goes nowhere
+// Definition & call, though returned 42 goes nowhere... Anyway valid JS
 
 var returnedValue2 = (()=>42)();  // Definition&call, return value to a variable
 console.log("Meaning of life " +returnedValue2);
 
-console.log((()=>42)());  // Tricky test for code reading
+console.log((()=>42)());  // Tricky test for code reader :)
 
 (()=>{return 42;})();  // The same IIFE A bit longer way, with explicit return
 
-console.log(   ((name) => "Hello " + name)("Joe")   );   // version 1
-console.log(   (name => "Hello " + name)("Joe")   );     // version 2
+console.log(((name) => "Hello " + name)("Joe"));   // IIFE version 1
+console.log((name => "Hello " + name)("Joe"));     // IIFE version 2
 
 
 // REMEMBER THESE FOUR FACTS about arrow functions:
@@ -60,16 +66,16 @@ console.log(   (name => "Hello " + name)("Joe")   );     // version 2
 
 // 3. if the created value is adhoc object, then
 // (   ) are needed around the object, otherwise 
-// {} would be confused for a block:
+// {} would be confused for the function body (block):
       () => ({a:123, b:456})
-      // () => {a:123, b:456}   // This would be the problem!
+      // () => {a:123, b:456}   // This would be a problem!
 
 // 4. if using the keyword 'this', the 'this' refers to the outer object
 // and not to the function object itself! 
 // -> sometimes you need arrow function, and normal would not work!!!
 // (In traditional function code, 'this' refers to the function object
-// itself. Big difference)
-// Typically in some kind of event-handler function we MUST
+// itself. Big difference!)
+// Typically in some kind of event-handler function (React,Redux) we MUST
 // use arrow function and traditional with same code would not work.
 
 console.log("Put a break point here for stopping the debugger");
@@ -82,7 +88,7 @@ let answer = (()=>42)();
 
 // Writing THE SAME with traditional syntaxt takes 24-26 more
 // = 39 characters altogether. Of course only very short
-// functions have this huge 3 x bloating <> performance effect.
+// functions have this huge 3 x bloating <> network js-file download benefit.
 
 let answer = (function () {
     return 42;
@@ -91,13 +97,13 @@ let answer = (function () {
 */
 
 // Random, but important example of many things:
-// - filter function creating a new array out of selected items
+// - filter function creating a new array out of the selected/matching items
 // - passing the selection function (object) to the filter function
 // - arrow function with implicit return
 // - skipping first parameter with dummy parameter name _ 
 
 const peopleArray = ['Adam','Bertha','Cecilia','David','Elvis','Feodor'];
-const firstTeam = peopleArray.filter(   (_,index) => index%2==0  );
+const firstTeam = peopleArray.filter( (_,index) => index%2 == 0 );
 console.dir(firstTeam);
 // firstTeam arrayis like this: ['Adam', 'Cecilia', 'Elvis']    
 // as they had even indexes 0,2,4
