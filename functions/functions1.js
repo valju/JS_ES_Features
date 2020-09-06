@@ -8,8 +8,8 @@ console.log("*********************************");
 // https://developer.mozilla.org/en-US/docs/Glossary/Function
 // e.g. "...A function in JavaScript is also an object..."
 
-// Function Statement / (function declaration)
-// foo1 and foo2 mean the same, actually internally both turned to
+// Function Statement / (function declaration).   Basically
+// foo1 and foo2 are the same, actually internally both turned to
 // foo2 way anyway. 
 function foo1(a, b) {
     "use strict";
@@ -55,16 +55,16 @@ foo3b("It's morning.");
 // extra example
 foo3b = foo3(false);
 foo3b("I love mornings.");
-
+console.dir(foo3b.prototype);
 // ****************************************************************************
 
 // IIFE = Immediately Invoked Function Expression 
 // https://developer.mozilla.org/en-US/docs/Glossary/IIFE
-// (Invoked = We define and we call, right away)
-// Incorrect old alias = SIAF = Self-Invoking Anonymous Function, FORGET!
-// Incorrect old alias = SEAF = Self-Executing Anonymous Function, FORGET!
+// (Invoked = We define and call, right away)
+// (((Incorrect old alias = SIAF = Self-Invoking Anonymous Function, FORGET!)))
+// (((Incorrect old alias = SEAF = Self-Executing Anonymous Function, FORGET!)))
 
-// Learn this syntax, even if JSLint.com doesn't like it
+// Learn just this intuitive syntax, even if JSLint.com doesn't like it
 /*global console*/
 (function () {
     "use strict";
@@ -78,11 +78,13 @@ foo3b("I love mornings.");
     console.log("Hello " + name);
 })("Joe");
 
+// Why / when / how could you benefit from using IIFE?
+
 // ****************************************************************************
 
-// Calling function without all of its parameters
+// Calling a function without providing all of its arguments
 // Let's say a is obligatory and b optional
-// (Optional parameters omitted from the end of parameter list!)
+// (Optional parameters omitted from the end of the parameter list!)
 var foo4 = function (a, b) {
     "use strict";
 
@@ -116,7 +118,8 @@ var foo5 = function (a, b) {
 };
 
 console.log("foo5(3,4): " + foo5(3, 4));
-console.log("foo5(null,4): " + foo5(null,4));   // null or any other NaN
+console.log("foo5(null,4): " + foo5(null,4));   
+// null or any other NaN would do here.
 
 var fooFromSomeFramework = function (func) {
     "use strict";
@@ -127,11 +130,11 @@ var fooFromSomeFramework = function (func) {
 // And the system wants to give us two arguments
 // but we don't need the _first_ one(s), _ is sometimes
 // used as the _name_ of the non-needed parameter
-// (Just a custom by programmers to tell others that
+// (Just a custom by programmers to tell the readers that
 //  they don't use parameter _ for anything)
 var bar6 = function (_, num) {
     "use strict";
-    console.log("Number squared: " + (num*num) );
+    console.log("Underscored number squared: " + (num*num) );
 };
 
 fooFromSomeFramework(bar6);

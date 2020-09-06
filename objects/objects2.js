@@ -8,12 +8,13 @@ console.log("*******************************");
 // some local scope starts (some block for no other reason,
 // though could be e.g. some function or object) 
 {
-    // Creating a local variable (let) and and object to it:
+    // Creating a local variable (let) and an object to it:
     let a = {abc:123, def:456, ghi:789,};
     // note the trailing/final comma, not error since ES6
     // => allows e.g. generators create code easier as
     // last line/item is identical with others
 
+    // DESTRUCTURING ASSIGNMENT ANALYZED
     // Defining three local consts with the const { } structure
     // to the local scope!
     // => here {a,b,c} confusingly doesn't mean creating an object!
@@ -30,7 +31,7 @@ console.log("*******************************");
     // abc++;   // This would be an error, cannot change const abc
 
     // Just creating a new object, with names of fields coming 
-    // from those local consts, and also values
+    // from those local consts, and also values. See how this differs.
     let b = {
         def,
         abc,
@@ -56,11 +57,11 @@ console.log("Put another break point here to see the values in the debugger");
     const def = a.def;
     const abc = a.abc;
 
-    // In React examples, the first is usually laid out on one line:
+    // In React examples, the whole destructing assignment is usually laid out on one line:
     const { ghi, def, abc, } = a;
 */
 
-/*  What happens if the const structure defines a const xyz, without
+/*  Testing: What happens if the const structure defines a const xyz, without
     giving it a value. 
 
     let a = {abc:123, def:456, ghi:789,};
@@ -75,14 +76,14 @@ console.log("Put another break point here to see the values in the debugger");
     console.log("The value of const xyz: " +xyz);
 */
 
-/*   Similar way, destructuring an Array
+/*   Similar way, BUT this time destructuring an Array
 
 // Creating a local variable (let) and and object to it:
     let b = [123, 456, 789,];
 
     // Defining three local consts with the destructure structure
     // to the local scope!
-    // => here [a,b,c] confusingly doesn't mean creating an object!
+    // => here [a,b,c] again confusingly means something else than creating an object!
     const [
         jkl,
         mno,
@@ -92,7 +93,8 @@ console.log("Put another break point here to see the values in the debugger");
     
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Array_destructuring
 
-    // ... could be written also like this: (Doesn't make any sense!)
+    // ... could be written also like this: (Wouldn't make any sense, of course
+    // using hardcoded indexes!)
     const jkl = b[0];
     const mno = b[1];
     const prq = b[2];
