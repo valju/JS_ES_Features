@@ -36,7 +36,7 @@ console.log("*******************************");
         def,
         abc,
         ghi,
-    }
+    };
 
     console.log("Put a break point here to see the values in the debugger");
 }
@@ -73,6 +73,10 @@ console.log("Put another break point here to see the values in the debugger");
         xyz, // This went through in Firefox, but will get value: undefined
     } = a;  // Group assignment from object a to each const !!!
 
+    // Just quick and dirty testing the missing property 
+    // => do not use this or similar hazardous without:
+    // 1. reading the ECMAScript standard 2. testing extensively
+
     console.log("The value of const xyz: " +xyz);
 */
 
@@ -83,12 +87,11 @@ console.log("Put another break point here to see the values in the debugger");
 
     // Defining three local consts with the destructure structure
     // to the local scope!
-    // => here [a,b,c] again confusingly means something else than creating an object!
+    // => here [a,b,c] again confusingly means something else than creating an (array) object!
     const [
         jkl,
         mno,
         prq,
-        //xyz, // This went through in Firefox, but will get value: undefined
      ] = b;  // Destructure the array a to each const !!!
     
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Array_destructuring
