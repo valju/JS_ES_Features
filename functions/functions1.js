@@ -118,13 +118,18 @@ var foo5 = function (a, b) {
 };
 
 console.log("foo5(3,4): " + foo5(3, 4));
-console.log("foo5(null,4): " + foo5(null,4));   
-// null or any other NaN would do here.
+console.log("foo5(null,4): " + foo5(null, 4));   
+// null or any other yielding NaN from Number(a) would do here.
 
+/* ******************************************************************** */
+
+// Consumer of the _sync_ 'call-back' function
 var fooFromSomeFramework = function (func) {
     "use strict";
     func(2,3);   // Framework calls the given function with two parameters
 };
+
+// Provider of the _sync_ 'call-back' function:
 
 // If we need to define an event handler or something,
 // And the system wants to give us two arguments
@@ -138,3 +143,10 @@ var bar6 = function (_, num) {
 };
 
 fooFromSomeFramework(bar6);
+
+
+
+
+// In some other cases you might give the handler like this to the framework:
+var someFrameworkObject = {};
+someFrameworkObject.onThisStrangeEvent = bar6;    
