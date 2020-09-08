@@ -16,7 +16,7 @@ var sum = function (num1, num2=3) {
 console.log(sum(4,11));         // Will print 15, and not use the default value 3
 
 console.log(sum(4,3));          
-// Did print 7
+// Did print 7, and not use the default value 3
 
 console.log(sum(4));            
 // Did also print 7, as missing(=undefined) num2 defaults to 3
