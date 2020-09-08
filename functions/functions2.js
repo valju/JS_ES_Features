@@ -23,7 +23,7 @@ fooar1();
 // With exactly ONE parameter, the parameter list
 // parentheses COULD BE left out. (But not for 0, 2 or more)
 // But, we should never optimize writing speed. 
-// Most likely with () faster to recongize/read/understand/validate/audit
+// Most likely with () faster to recognize/read/understand/validate/audit
 let fooar2 = name => {
     console.log("Hello " + name + "!");
 };
@@ -31,7 +31,7 @@ let fooar2 = name => {
 fooar2("Joe");
 
 // What is this???
-(()=>42)();
+(() => 42)();
 
 
 // IIFE with arrow function
@@ -43,12 +43,12 @@ fooar2("Joe");
 // That anonymous function is immediately called with the second ()
 // Definition & call, though returned 42 goes nowhere... Anyway valid JS
 
-var returnedValue2 = (()=>42)();  // Definition&call, return value to a variable
-console.log("Meaning of life " +returnedValue2);
+var returnedValue2 = (() => 42)();  // Definition&call, return value to a variable
+console.log("Meaning of life " + returnedValue2);
 
-console.log((()=>42)());  // Tricky test for code reader :)
+console.log((() => 42)());  // Tricky test for code reader :)
 
-(()=>{return 42;})();  // The same IIFE A bit longer way, with explicit return
+(() => { return 42; })();  // The same IIFE A bit longer way, with explicit return
 
 console.log(((name) => "Hello " + name)("Joe"));   // IIFE version 1
 console.log((name => "Hello " + name)("Joe"));     // IIFE version 2
@@ -58,7 +58,7 @@ console.log((name => "Hello " + name)("Joe"));     // IIFE version 2
 
 // 1. parameter list options:
 //   0 parameters:        ()
-//   1 parameter, Note!:  (name)   OR   name  
+//   1 parameter, Note!:  name  OR  (name)   <= I prefer the second  
 //   2 or more parameters (x,y)
 
 // 2. if no function body {  } then 
@@ -67,16 +67,18 @@ console.log((name => "Hello " + name)("Joe"));     // IIFE version 2
 // 3. if the created value is adhoc object, then
 // (   ) are needed around the object, otherwise 
 // {} would be confused for the function body (block):
-      () => ({a:123, b:456})
-      // () => {a:123, b:456}   // This would be a problem!
+() => ({ a: 123, b: 456 })
+// () => {a:123, b:456}   // This would be a problem!
 
-// 4. if using the keyword 'this', the 'this' refers to the outer object
-// and not to the function object itself! 
-// -> sometimes you need arrow function, and normal would not work!!!
+// 4. if using the keyword 'this' in ARROW function, the 'this' refers
+// to the outer object and not to the function object itself! 
+// useful: Sometimes you need arrow function, and normal would not work!!!
 // (In traditional function code, 'this' refers to the function object
-// itself. Big difference!)
-// Typically in some kind of event-handler function (React,Redux) we MUST
+// itself. Big difference and also typical source of mistakes!)
+// Typically in some kind of event-handler function (React, Redux) we MUST
 // use arrow function and traditional with same code would not work.
+
+// this = self-reference to object itself. In other languages: this, self, object, ...
 
 console.log("Put a break point here for stopping the debugger");
 
@@ -102,8 +104,8 @@ let answer = (function () {
 // - arrow function with implicit return
 // - skipping first parameter with dummy parameter name _ 
 
-const peopleArray = ['Adam','Bertha','Cecilia','David','Elvis','Feodor'];
-const firstTeam = peopleArray.filter( (_,index) => index%2 == 0 );
+const peopleArray = ['Adam', 'Bertha', 'Cecilia', 'David', 'Elvis', 'Feodor'];
+const firstTeam = peopleArray.filter((_, index) => index % 2 == 0);
 console.dir(firstTeam);
-// firstTeam arrayis like this: ['Adam', 'Cecilia', 'Elvis']    
+// firstTeam arrayis like this: ['Adam', 'Cecilia', 'Elvis']
 // as they had even indexes 0,2,4
