@@ -27,11 +27,12 @@ console.log("**********************************************");
 // From somebody else's code we get: Any value below is possible
 
 var array = [
-    // falsy values:
+    // falsy values: 9, out of which 3 are empty strings (and 1 will not be asked to remember: document.all =>8)
+    // Also possible to write 0 in three different ways, 0, 0n (Big int), -0 signed int, Though remembering 0 is enough.
     false,
     null,
     undefined,
-    0,
+    0, 0n, -0,
     NaN,
     '',
     "",
