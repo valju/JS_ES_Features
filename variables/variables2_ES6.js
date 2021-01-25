@@ -6,7 +6,7 @@ console.log("*********** let, const and scopes ***********");
 console.log("*********************************************");
 
 // Function definition (~function creation)
-function variable2_foo(c,d) {
+function variable2_foo(c, d) {
     "use strict";
     let g = 5;   // function scope let variable
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let 
@@ -41,6 +41,7 @@ const i = 55;
 // With objects it's a bit more complicated   - Class drawing made this clear?
 const j = {firstName:"Joe", lastName:"Smith"};
 //j = {firstName:"Ann", lastName:"Jones"};   // Error!!!
+j = null;
 // TypeError: Assignment to constant variable.
 // We cannot change the value of const j, which is reference
 // to the first object.
