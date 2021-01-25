@@ -8,7 +8,7 @@ console.log("********************************************");
 // Two global variables https://developer.mozilla.org/en-US/docs/Glossary/Scope 
 var a;         // variable defined, value undefined
 var b = 3;     // variable defined, value defined
-//var f;      // This would fix the implicit global scope var prob   = G
+//var f;       // This would fix the implicit global scope var prob   = G
 
 // Function definition (~function creation)
 function variable_foo(c, d) {
@@ -27,13 +27,15 @@ function variable_foo(c, d) {
     // Of course 'var f;' could be written in another file.
     // But all in all we _try_ to avoid using global scope variables.
     
+    g = 7;   // Another implicit global scope var created (even if in func!)
+
     console.log("f: " + f);
+    c = 7;
 }
 
 a = 6;
 
-// c = 11;  // This is an error! Undeclared/undefined 'c'
-// e = 13;  // This is an error! Undeclared/undefined 'e'
+
 f = 15;     // This is bad coding, (implicit global scope var)
 console.log("f after function definition:" + f);
 
@@ -41,20 +43,24 @@ console.log("f after function definition:" + f);
 // 
 variable_foo(a, b);        // "Actual Arguments" values of a and b
 console.log("f after function call:" + f);
+// c = 11;  // This is an error! Undeclared/undefined 'c'
+// e = 13;  // This is an error! Undeclared/undefined 'e'
 
 
 /*  Example of how VARIABLE HOISTING sometimes makes things tricky:
 
-nameX = "Joe";      // implicit global scoped var
+nameX = "Joe";      // implicit global scoped 'var'
                     // example would work same if here: var nameX = "Joe";
 
 func zoo() {
-                                   // <= here _hoisted_: var nameX;
-    nameX ="Mike"                  // thus this refers to f-scoped, not global
+                               // <= here _hoisted_: var nameX;
+    nameX ="Mike"              // thus this refers to f-scoped, not global
 
     for(var i=0; i<10; i++) {
         var nameX = "Sue";         // this will become actually:  nameX = "Sue";
     }
 }
+
+zoo();
 
 */
