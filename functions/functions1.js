@@ -56,7 +56,13 @@ foo3b("It's morning.");
 foo3b = foo3(false);
 foo3b("I love mornings.");
 
+console.log(typeof(foo1));
+
+console.log("***dir***");
+console.dir(foo3b);
 console.dir(foo3b.prototype);
+console.log("***   ***");
+
 // ****************************************************************************
 
 // IIFE = Immediately Invoked Function Expression 
@@ -102,6 +108,7 @@ var foo4 = function (a, b) {
 
 console.log("foo4(3,4): " +foo4(3, 4));
 console.log("foo4(3): " +foo4(3));
+console.log("foo4(3): " +foo4()); // Now even a without value = undefined, fingers crossed
 
 // Calling function without _all_ of it's parameters
 // Let's say b is always needed and a sometimes not
@@ -125,9 +132,9 @@ console.log("foo5(null,4): " + foo5(null, 4));
 /* ******************************************************************** */
 
 // Consumer of the _sync_ 'call-back' function
-var fooFromSomeFramework = function (func) {
+var fooFromSomeFramework = function (func2) {
     "use strict";
-    func(2,3);   // Framework calls the given function with two parameters
+    func2(2,3);   // Framework calls the given function with two parameters
 };
 
 // Provider of the _sync_ 'call-back' function:
@@ -140,12 +147,12 @@ var fooFromSomeFramework = function (func) {
 //  they don't use parameter _ for anything)
 var bar6 = function (_, num) {
     "use strict";
-    console.log("Underscored number squared: " + (num*num) );
+    console.log("Second number squared: " + (num*num) );
 };
 
 fooFromSomeFramework(bar6);
 
-
+// --------------------------------------------------------------------------
 
 
 // In some other cases you might give the handler like this to the framework:
