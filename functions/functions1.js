@@ -55,6 +55,7 @@ foo3b("It's morning.");
 // extra example
 foo3b = foo3(false);
 foo3b("I love mornings.");
+
 console.dir(foo3b.prototype);
 // ****************************************************************************
 
