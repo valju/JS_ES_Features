@@ -112,7 +112,7 @@ let answer = (function () {
 // - arrow function with implicit return
 // - skipping first parameter with dummy parameter name _ 
 
-const peopleArray = ['Adam', 'Bertha', 'Cecily', 'David', 'Elvis', 'Feodor'];
+const peopleArray = ['Adam', 'Bertha', 'Cecily', 'Elvis', 'Elvis', 'Adam'];
 const firstTeam = peopleArray.filter((_, index) => index % 2 == 0);
 console.dir(firstTeam);
 console.log();
@@ -132,10 +132,25 @@ const longNameTeam = peopleArray.filter((value, index, array) => {
 
     for(let i=0; i<array.length; i++) {
         if(value.length < array[i].length && index != i ) {  // Sometimes needed, not here    
-            longerNameFound = true;
-        }
-    }
-
+            longerNameFound = true;                          // becaus length < length
+        }                                                    // so for oneself won't be true:
+    }                                                        // "Bertha".length < "Bertha".length
+                                                             // will be false
     return !longerNameFound;
 });
 console.dir(longNameTeam);
+
+// Fourth example, using also the whole array, when looking at each item one by one (filter
+// calls the callback for each item one by one)
+const sameNameTeam = peopleArray.filter((value, index, array) => {
+    let sameNameFound = false;
+
+    for(let i=0; i<array.length; i++) {
+        if(value === array[i] ) {  // Sometimes needed, not here    
+            sameNameFound = true;                          // becaus length < length
+        }                                                    // so for oneself won't be true:
+    }                                                        // "Bertha".length < "Bertha".length
+                                                             // will be false
+    return sameNameFound;
+});
+console.dir(sameNameTeam);
