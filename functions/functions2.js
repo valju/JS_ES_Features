@@ -30,8 +30,11 @@ let fooar2 = name => {
 
 fooar2("Joe");
 
-// What is this???
+// What are these???
 (() => 42)();
+(abc => 42)();
+
+
 
 
 // IIFE with arrow function
@@ -43,18 +46,20 @@ fooar2("Joe");
 // That anonymous function is immediately called with the second ()
 // Definition & call, though returned 42 goes nowhere... Anyway valid JS
 
-var returnedValue2 = (() => 42)();  // Definition&call, return value to a variable
+var returnedValue2 = (() => 42)(); // Definition & call, return value to a variable
 console.log("Meaning of life " + returnedValue2);
 
-console.log((() => 42)());  // Tricky test for code reader :)
+console.log((() => 42)()); // Tricky test for code reader :)
 
-(() => { return 42; })();  // The same IIFE A bit longer way, with explicit return
+(() => {
+    return 42;
+})(); // The same IIFE A bit longer way, with explicit return
 
-console.log(((name) => "Hello " + name)("Joe"));   // IIFE version 1
-console.log((name => "Hello " + name)("Joe"));     // IIFE version 2
+console.log(((name) => "Hello " + name)("Joe")); // IIFE version 1
+console.log((name => "Hello " + name)("Joe")); // IIFE version 2
 
 
-// REMEMBER THESE FOUR FACTS about arrow functions:
+// REMEMBER THESE _FOUR FACTS_ about arrow functions:
 
 // 1. parameter list options:
 //   0 parameters:        ()
@@ -67,8 +72,11 @@ console.log((name => "Hello " + name)("Joe"));     // IIFE version 2
 // 3. if the created value is adhoc object, then
 // (   ) are needed around the object, otherwise 
 // {} would be confused for the function body (block):
-() => ({ a: 123, b: 456 })
-// () => {a:123, b:456}   // This would be a problem!
+() => ({
+    a: 123,
+    b: 456,
+})
+// () => {a:123, b:456,}   // This would be a problem!
 
 // 4. if using the keyword 'this' in ARROW function, the 'this' refers
 // to the outer object and not to the function object itself! 
@@ -104,8 +112,30 @@ let answer = (function () {
 // - arrow function with implicit return
 // - skipping first parameter with dummy parameter name _ 
 
-const peopleArray = ['Adam', 'Bertha', 'Cecilia', 'David', 'Elvis', 'Feodor'];
+const peopleArray = ['Adam', 'Bertha', 'Cecily', 'David', 'Elvis', 'Feodor'];
 const firstTeam = peopleArray.filter((_, index) => index % 2 == 0);
 console.dir(firstTeam);
-// firstTeam arrayis like this: ['Adam', 'Cecilia', 'Elvis']
+console.log();
+// firstTeam array is like this: ['Adam', 'Cecilia', 'Elvis']
 // as they had even indexes 0,2,4
+
+// Second example, now also Bertha and Feodor would be included, as when the callback
+// is called for them, it will return now true, as the string lengths are 6 = even number
+const otherTeam = peopleArray.filter((value, index) => index % 2 == 0 || value.length % 2 == 0);
+console.dir(otherTeam);
+console.log();
+
+// Third example, using also the whole array, when looking at each item one by one (filter
+// calls the callback for each item one by one)
+const longNameTeam = peopleArray.filter((value, index, array) => {
+    let longerNameFound = false;
+
+    for(let i=0; i<array.length; i++) {
+        if(value.length < array[i].length && index != i ) {  // Sometimes needed, not here    
+            longerNameFound = true;
+        }
+    }
+
+    return !longerNameFound;
+});
+console.dir(longNameTeam);
