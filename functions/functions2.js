@@ -114,16 +114,17 @@ let answer = (function () {
 
 const peopleArray = ['Adam', 'Bertha', 'Cecily', 'Elvis', 'Elvis', 'Adam'];
 const firstTeam = peopleArray.filter((_, index) => index % 2 == 0);
+console.log("*** Every second name ***");
 console.dir(firstTeam);
-console.log();
-// firstTeam array is like this: ['Adam', 'Cecilia', 'Elvis']
+
+// firstTeam array is like this: ['Adam', 'Cecily', 'Elvis']
 // as they had even indexes 0,2,4
 
 // Second example, now also Bertha and Feodor would be included, as when the callback
 // is called for them, it will return now true, as the string lengths are 6 = even number
 const otherTeam = peopleArray.filter((value, index) => index % 2 == 0 || value.length % 2 == 0);
+console.log("*** Every second name, plus even number length names ***");
 console.dir(otherTeam);
-console.log();
 
 // Third example, using also the whole array, when looking at each item one by one (filter
 // calls the callback for each item one by one)
@@ -131,13 +132,14 @@ const longNameTeam = peopleArray.filter((value, index, array) => {
     let longerNameFound = false;
 
     for(let i=0; i<array.length; i++) {
-        if(value.length < array[i].length && index != i ) {  // Sometimes needed, not here    
-            longerNameFound = true;                          // becaus length < length
+        if(value.length < array[i].length) {  //  && index != i  Sometimes needed, NOT here    
+            longerNameFound = true;                          // because length < length
         }                                                    // so for oneself won't be true:
     }                                                        // "Bertha".length < "Bertha".length
                                                              // will be false
     return !longerNameFound;
 });
+console.log("*** Longest length name(s) ***");
 console.dir(longNameTeam);
 
 // Fourth example, using also the whole array, when looking at each item one by one (filter
@@ -146,11 +148,12 @@ const sameNameTeam = peopleArray.filter((value, index, array) => {
     let sameNameFound = false;
 
     for(let i=0; i<array.length; i++) {
-        if(value === array[i] ) {  // Sometimes needed, not here    
-            sameNameFound = true;                          // becaus length < length
-        }                                                    // so for oneself won't be true:
-    }                                                        // "Bertha".length < "Bertha".length
-                                                             // will be false
+        if(value === array[i] && index != i ) {  // index != i is sometimes needed, e.g here 
+            sameNameFound = true;                          // becaus value == array[i]
+        }                                                  // for oneself :
+    }                                                      // "Bertha" == "Bertha" (same slot)
+                                                           // will be true, trivial comparison
     return sameNameFound;
 });
+console.log("*** Team with namesakes ***");
 console.dir(sameNameTeam);
