@@ -30,10 +30,11 @@ var l = {};    // 1. Empty ad-hoc object crated (+2.var defined + 3.assigment)
     // event-handler to handle multiple fields same way
     let e  = {[a]:11,[b]:22};  // object created: {foo:11,bar:22}
     let e2 = {[a]:a,[b]:b};    // object created: {foo:"foo",bar:"bar"}
+    console.log("foo:" + e2.foo);    // object doesn't have properties a or b!
     // [a] is called computed property name (ES6) 
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#New_notations_in_ECMAScript_2015
 
-    console.log("e: ");
+    console.log("console.log for e: " + e);
     console.dir(e); // prints that object and its substructures (sometimes) nicely
                     // don't give it any added text => decomposes that String then
     console.dir(e2);
@@ -59,11 +60,12 @@ var l = {};    // 1. Empty ad-hoc object crated (+2.var defined + 3.assigment)
     // Plus one more item, 8, added!
     
     // Two more advanced examples:
-    let j2 = [...g,...g];
-    let j3 = [...g,g];
+    let j2 = [...g, ...g];  // [2,4,6,2,4,6]
+    let j3 = [...g, g];     // [2,4,6,<reference to array 'g'>]
     g[1] = 222;  // Run debugger to see which objects are
                  // separate and which are references to
                  // same object (second item becomes 222)
+    console.log( j3[3][1] );   // same, location, value 222
 
     let k = {abc:true, xyz:false};  // object created
     let l = {...k};  // exact _copy_ of the object created
