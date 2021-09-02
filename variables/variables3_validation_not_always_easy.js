@@ -13,11 +13,15 @@ console.log("**********************************************");
 // https://developer.mozilla.org/en-US/docs/Glossary/Falsy  
 // The rest of the values are Truthy => if(value) {//This done}
 
+// It would be really easy to accept only numbers 1-5, but 
+// including 0 makes all different, as 0 is falsy, and
+// causes all kinds of challenges.
+
 // Types = Data types of JavaScript
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures
 
 
-// SO THIS CODE WON'T WORK YET!!! E.g. for the case of   true   
+// CODE IS JUST EXPERIMENTAL TECHNICAL FOOL-AROUND!!! E.g. for the case of   true   
 // the conditions should be changed.
 // COMPLETE THE CODE LOGIC AND TEST IT AT HOME
 
@@ -33,7 +37,7 @@ var array = [
     null,
     undefined,
     0,      
-    //0n, // Fix needed:This is falsy, but "correct" too, but code would have to be changed 
+    //0n, // Fix needed:This is falsy, but "correct" too, but code needs to be changed? 
     -0,      
     NaN,
     '',                                   
