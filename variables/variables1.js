@@ -27,8 +27,8 @@ function variable_foo(c, d) {
     // Of course 'var f;' could be written in another file.
     // But all in all we _try_ to avoid using global scope variables.
     
-    f2 = 7;   // Another implicit global scope var created (even if in func!)
-
+    //f2 = 7;   // Another implicit global scope var created (even if in func!)
+    
     console.log("f: " + f);
     c = 7;
 }

@@ -32,6 +32,7 @@ variable2_foo(a,b); // Using global scope variables created by variables1.js
 // const is same as let (scope is NOT global or function, it's: local)
 // Local scope means inside the outer { and  } marks, or inside for
 // for( let i=i; i<10; i++ ) { console.log(i); }
+// ((let and const can be used in Global scope too, then global))
 
 // BUT for const the _immediate_ value is constant:
 
@@ -41,7 +42,7 @@ const i = 55;
 // With objects it's a bit more complicated   - Class drawing made this clear?
 const j = {firstName:"Joe", lastName:"Smith"};
 //j = {firstName:"Ann", lastName:"Jones"};   // Error!!!
-j = null;
+//j = null;
 // TypeError: Assignment to constant variable.
 // We cannot change the value of const j, which is reference
 // to the first object.
@@ -54,3 +55,11 @@ j.lastName="Jones";           // OK! the object reference was not changed
 j.phoneNumber="050-1234567";  // OK! the object reference was not changed
 
 console.log("Put a break point here for stopping the debugger");
+
+
+let obj = {a:"Abc", b:"Def"};
+let obj2 = obj;
+obj2.a = "Kalle";
+console.dir(obj);
+obj = null;
+
