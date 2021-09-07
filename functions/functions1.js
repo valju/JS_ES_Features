@@ -49,8 +49,8 @@ var foo3 = function (d) {
 foo3(true)("It's morning.");
 
 // ... or with two lines
-var foo3b = foo3(true);
-foo3b("It's morning.");
+var foo3b = foo3(true);    // returns a function object
+foo3b("It's morning.");    // calls the returned function
 
 // extra example
 foo3b = foo3(false);
@@ -155,6 +155,9 @@ fooFromSomeFramework(bar6);
 // --------------------------------------------------------------------------
 
 
-// In some other cases you might give the handler like this to the framework:
+// In some other cases you might attach/hook the handler like this to the framework:
 var someFrameworkObject = {};
 someFrameworkObject.onThisStrangeEvent = bar6;    
+// ...
+strangeEventFiring();      // bar6 would be executed
+// ...

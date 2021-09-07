@@ -32,6 +32,7 @@ fooar2("Joe");
 
 // What are these???
 (() => 42)();
+
 (abc => 42)();
 
 
@@ -69,7 +70,7 @@ console.log((name => "Hello " + name)("Joe")); // IIFE version 2
 // 2. if no function body {  } then 
 // automatic return of one value created/defined after =>
 
-// 3. if the created value is adhoc object, then
+// 3. if the created value is an adhoc object, then
 // (   ) are needed around the object, otherwise 
 // {} would be confused for the function body (block):
 () => ({
@@ -84,7 +85,7 @@ console.log((name => "Hello " + name)("Joe")); // IIFE version 2
 // (In traditional function code, 'this' refers to the function object
 // itself. Big difference and also typical source of mistakes!)
 // Typically in some kind of event-handler function (React, Redux) we MUST
-// use arrow function and traditional with same code would not work.
+// use arrow function and otherwise similar traditional function would not work.
 
 // this = self-reference to object itself. In other languages: this, self, object, ...
 
@@ -112,12 +113,12 @@ let answer = (function () {
 // - arrow function with implicit return
 // - skipping first parameter with dummy parameter name _ 
 
-const peopleArray = ['Adam', 'Bertha', 'Cecily', 'Elvis', 'Elvis', 'Adam'];
+const peopleArray = ['Adam', 'Bertha', 'Cecily', 'Elvis', 'Lewis', 'Adam'];
 const firstTeam = peopleArray.filter((_, index) => index % 2 == 0);
 console.log("*** Every second name ***");
 console.dir(firstTeam);
 
-// firstTeam array is like this: ['Adam', 'Cecily', 'Elvis']
+// firstTeam array is like this: ['Adam', 'Cecily', 'Lewis']
 // as they had even indexes 0,2,4
 
 // Second example, now also Bertha and Feodor would be included, as when the callback
