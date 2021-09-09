@@ -46,11 +46,7 @@ console.log("Put another break point here to see the values in the debugger");
 
 /*
     // This, from above...
-    const {
-        ghi,
-        def,
-        abc,   
-    } = a;
+    const {ghi,def,abc} = a;
 
     // ... could be written also like this:
     const ghi = a.ghi;
