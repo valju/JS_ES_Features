@@ -1,4 +1,5 @@
 const array1 = [1, 2, 3, 4];
+
 const myReducer = (previousValue, currentValue) => {
   	console.log("previousValue:"+previousValue+", currentValue:"+currentValue);
 	return (previousValue + currentValue);

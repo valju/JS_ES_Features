@@ -28,7 +28,7 @@ function variable_foo(c, d) {
     // But all in all we _try_ to avoid using global scope variables.
     
     //f2 = 7;   // Another implicit global scope var created (even if in func!)
-    
+
     console.log("f: " + f);
     c = 7;
 }
@@ -56,7 +56,7 @@ func zoo() {
                                // <= here _hoisted_: var nameX;
     nameX ="Mike"              // thus this refers to f-scoped, not global
 
-    for(var i=0; i<10; i++) {
+    if(true) {
         var nameX = "Sue";         // this will become actually:  nameX = "Sue";
     }
 }

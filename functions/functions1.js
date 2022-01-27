@@ -8,6 +8,8 @@ console.log("*********************************");
 // https://developer.mozilla.org/en-US/docs/Glossary/Function
 // e.g. "...A function in JavaScript is also an object..."
 
+// Let's look at two ways to define functions
+
 // Function Statement / (function declaration).   Basically
 // foo1 and foo2 are the same, actually internally both turned to
 // foo2 way anyway. 
@@ -126,7 +128,7 @@ var foo5 = function (a, b) {
 };
 
 console.log("foo5(3,4): " + foo5(3, 4));
-console.log("foo5(null,4): " + foo5(null, 4));   
+console.log("foo5(null,4): " + foo5(null,4));   
 // null or any other yielding NaN from Number(a) would do here.
 
 /* ******************************************************************** */

@@ -33,9 +33,7 @@ fooar2("Joe");
 // What are these???
 (() => 42)();
 
-(abc => 42)();
-
-
+(abc => abc+42)();                //   => "1142"
 
 
 // IIFE with arrow function
@@ -112,6 +110,7 @@ let answer = (function () {
 // - passing the selection function (object) to the filter function
 // - arrow function with implicit return
 // - skipping first parameter with dummy parameter name _ 
+// - skipping the third parameter (reference to original array) by not defining it
 
 const peopleArray = ['Adam', 'Bertha', 'Cecily', 'Elvis', 'Lewis', 'Adam'];
 const firstTeam = peopleArray.filter((_, index) => index % 2 == 0);
@@ -128,11 +127,11 @@ console.log("*** Every second name, plus even number length names ***");
 console.dir(otherTeam);
 
 // Third example, using also the whole array, when looking at each item one by one (filter
-// calls the callback for each item one by one)
-const longNameTeam = peopleArray.filter((value, index, array) => {
+// calls the callback for each item one by one. _ replacing index that we do not use)
+const longNameTeam = peopleArray.filter((value, _, array) => {
     let longerNameFound = false;
 
-    for(let i=0; i<array.length; i++) {
+    for(let i=0; i<array.length && !longerNameFound; i++) {
         if(value.length < array[i].length) {  //  && index != i  Sometimes needed, NOT here    
             longerNameFound = true;                          // because length < length
         }                                                    // so for oneself won't be true:
