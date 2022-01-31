@@ -32,8 +32,8 @@ console.log(sum(4,null));
 
 console.log("Put a break point here for stopping the debugger");
 
-
-/*  // Extra extra, forget: Find a browser or other JS environment where this mispelled
+/*
+    // Extra extra, forget: Find a browser or other JS environment where this mispelled
     // lenght (instead of length) would still lead to loop run once, for 0.
     // Seems to fixed at least in Chrome
 
@@ -47,4 +47,3 @@ for(var i=0; i<array.lenght; i++ ) {
     console.log(i +" : " + array[i]);
 }
 */
-

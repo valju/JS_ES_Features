@@ -98,3 +98,15 @@ console.log("Put another break point here to see the values in the debugger");
     const mno = b[1];
     const prq = b[2];
 */
+
+/*
+// consider React component that is defined with the function code below:
+
+const MyComponent = ({items,user}) => { .......... then more stuff
+
+}
+
+// 1. What happens here? 
+// 2. What are 'items' and 'user'? 
+// 3. Where do they get their values from? 
+// 4.Are they 'vars', consts or lets?

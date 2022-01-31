@@ -20,4 +20,5 @@ let copy = [...cee];
 // Deep or shallow copy?
 // Deep copy = everything duplicated and thus separated from original
 // Shallow copy = just first level reference variables are separate,
-// but references point at same original objects!
+// but references point at same original objects! (After cee and copy
+// which naturally are the first, and only separated level.)
