@@ -6,8 +6,8 @@
 // 2. While returning JSX "XML" markup from render method, either wrap the 
 // "XML" in parentheses (  ), or start it from the same line as the keyword "return" 
 
-// 3. How to read this:   <SomeElement attribute={{a:foo}} />  ...
-// The outer {   } take us from the JSX "XML" mode to JavaScript mode. Then {a:foo}
+// 3. How to read this:   <SomeElement attribute={a:foo} />  ...
+// The outer {   } take us from the JSX "XML-like" mode to JavaScript mode. Then {a:foo}
 // would just mean creating an ad-hoc object with property called 'a' with its
 // value copied from variable foo.
 
@@ -23,11 +23,9 @@
 // (To avoid probs, we could use port 8686 for the development time front end Node.js "server". 
 // Back-end Node.js server could use 8787)
 
-// 6. The final front-end we get when we copy the contents of the /build folder and
-// publish it on some real web server as static .js  .html  and .css files
-// E.g. on Proto, Myy, or AWS   Then we won't have front-end Node.js server at all 
-// anymore!!! Just static web server is enough. Most likely with port 80
+// 6. The final front-end we get when we run 'npm build' and copy the contents of the 
+// /build folder and publish it on some real web server as static .js  .html  and .css files
+// E.g. on Myy, Heroku, or AWS   Then we won't have/need front-end Node.js server at all 
+// anymore! Just static web server is enough. Most likely with ports 80,8080,443 used.
 
 // Back-end REST API will continue to run Node.js., e.g. with that 8787 port
-
-

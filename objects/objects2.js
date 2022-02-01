@@ -1,9 +1,9 @@
 /*jslint browser:true*/
 /*global console*/
 
-console.log("*******************************");
-console.log("*********** objects 2 *********");
-console.log("*******************************");
+console.log("***********************************************************");
+console.log("*********** objects 2 - Destructuring assignments *********");
+console.log("***********************************************************");
 
 // some local scope starts (some block for no other reason,
 // though could be e.g. some function or object) 
@@ -84,11 +84,7 @@ console.log("Put another break point here to see the values in the debugger");
     // Defining three local consts with the destructure structure
     // to the local scope!
     // => here [a,b,c] again confusingly means something else than creating an (array) object!
-    const [
-        jkl,
-        mno,
-        prq,
-     ] = b;  // Destructure the array a to each const !!!
+    const [jkl,mno,prq] = b;  // Destructure the array a to each const !!!
     
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Array_destructuring
 
@@ -100,13 +96,21 @@ console.log("Put another break point here to see the values in the debugger");
 */
 
 /*
-// consider React component that is defined with the function code below:
+    // consider React component that is defined with the function code below:
 
-const MyComponent = ({items,user}) => { .......... then more stuff
-
+const MyComponent = ({items,user}) => { 
+    //........ then more stuff here ..........
 }
 
-// 1. What happens here? 
-// 2. What are 'items' and 'user'? 
-// 3. Where do they get their values from? 
-// 4.Are they 'vars', consts or lets?
+    // 1. What happens here?    Hint: Not the same as    {a,b}  we had before, {a:a, b:b}
+    // 2. What are 'items' and 'user'? 
+    // 3. Where do they get their values from? 
+    // 4. Are they 'var', const or let?
+
+    // The component written in function way, gets props as parameter
+    // This component seems to get props.items and props.user as props from the parent
+
+    // A little bit same as:    const {items, user} = props         right?
+    // ... but in function parameter lists we cannot say var, const nor let
+    // => we get function-scoped vars 'items' and 'user' automatically
+*/
