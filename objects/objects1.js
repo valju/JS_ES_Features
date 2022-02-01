@@ -59,7 +59,7 @@ var l = {};    // 1. Empty ad-hoc object crated (+2.var defined + 3.assigment)
     let j = [...g, 8]; // _copy_ (=similar but separate object) of the array, 
     // Plus one more item, 8, added!
     
-    // Two more advanced examples:
+    // Two more advanced examples:    
     let j2 = [...g, ...g];  // [2,4,6,2,4,6]
     let j3 = [...g, g];     // [2,4,6,<reference to array 'g'>]
     g[1] = 222;  // Run debugger to see which objects are
