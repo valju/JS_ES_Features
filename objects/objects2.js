@@ -45,9 +45,7 @@ console.log("***********************************************************");
 console.log("Put another break point here to see the values in the debugger");
 
 /*
-    // This, from above...
-    const {ghi,def,abc} = a;
-
+    // The example from above...
     // ... could be written also like this:
     const ghi = a.ghi;
     const def = a.def;
@@ -98,8 +96,9 @@ console.log("Put another break point here to see the values in the debugger");
 /*
     // consider React component that is defined with the function code below:
 
-const MyComponent = ({items,user}) => { 
+const MyComponent = ({items, user}) => { 
     //........ then more stuff here ..........
+    items.forEach((item, index)=>{........});
 }
 
     // 1. What happens here?    Hint: Not the same as    {a,b}  we had before, {a:a, b:b}

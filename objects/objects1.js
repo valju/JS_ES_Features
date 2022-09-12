@@ -61,7 +61,7 @@ var l = {};    // 1. Empty ad-hoc object crated (+2.var defined + 3.assigment)
     
     // Two more advanced examples:    
     let j2 = [...g, ...g];  // [2,4,6,2,4,6]
-    let j3 = [...g, g];     // [2,4,6,<reference to array 'g'>]
+    let j3 = [...g, g];     // [2,4,6,<reference to array referenced by g>]
     g[1] = 222;  // Run debugger to see which objects are
                  // separate and which are references to
                  // same object (second item becomes 222)
