@@ -35,7 +35,6 @@ foo2(3,4);
 
 // function that defines a function and returns that function (object)
 var foo3 = function (d) {
-    "use strict";
     if(d===true) {
         return function(text) {
             console.log("Truthful text: " + text);
@@ -76,14 +75,12 @@ console.log("***   ***");
 // Learn just this intuitive syntax, even if JSLint.com doesn't like it
 /*global console*/
 (function () {
-    "use strict";
     console.log("Hello from IIFE!");
 })();
 
 // Real example, the learnable way, not liked by JSLint.com
 /*global console*/
 (function (name) {
-    "use strict";
     console.log("Hello " + name);
 })("Joe");
 

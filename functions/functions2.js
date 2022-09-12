@@ -33,7 +33,7 @@ fooar2("Joe");
 // What are these???
 (() => 42)();
 
-(abc => abc+42)();                //   => "1142"
+(abc => abc+42)(11);                //   => "1142"
 
 
 // IIFE with arrow function
@@ -69,13 +69,13 @@ console.log((name => "Hello " + name)("Joe")); // IIFE version 2
 // automatic return of one value created/defined after =>
 
 // 3. if the created value is an adhoc object, then
-// (   ) are needed around the object, otherwise 
+// extra (   ) are needed around the object, otherwise 
 // {} would be confused for the function body (block):
 () => ({
     a: 123,
     b: 456,
 })
-// () => {a:123, b:456,}   // This would be a problem!
+// () => {a:123, b:456}   // This would be a problem!
 
 // 4. if using the keyword 'this' in ARROW function, the 'this' refers
 // to the outer object and not to the function object itself! 
@@ -122,7 +122,7 @@ console.dir(firstTeam);
 
 // Second example, now also Bertha and Feodor would be included, as when the callback
 // is called for them, it will return now true, as the string lengths are 6 = even number
-const otherTeam = peopleArray.filter((value, index) => index % 2 == 0 || value.length % 2 == 0);
+const otherTeam = peopleArray.filter((item, index) => index % 2 == 0 || item.length % 2 == 0);
 console.log("*** Every second name, plus even number length names ***");
 console.dir(otherTeam);
 
