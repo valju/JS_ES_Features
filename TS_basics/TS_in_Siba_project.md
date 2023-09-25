@@ -1,7 +1,7 @@
 # TypeScript features found in siba-fe or Siba_be source code:
 
-- interface
-- inheritance for interfaces with 'extends'. Including members of previously defined interface.
+- interface   https://www.typescriptlang.org/docs/handbook/typescript-tooling-in-5-minutes.html#interfaces
+- inheritance for interfaces with 'extends'. Including members of previously defined interface.   https://www.typescripttutorial.net/typescript-tutorial/typescript-extend-interface/
 
 - variable type definitions after :
 - function return type definitions after :
@@ -12,7 +12,10 @@
 - type assertions with type unions ( xyz as JwtPayload | string)
 
 - the lenient/broad type: any
-- Generic types with type parameters, normal <T> or multiple, e.g. <T<U>>,
+- Generic types with type parameters, normal
+```<T>```  
+or multiple, e.g. 
+```<T<U>>```
 - in .ts you import from .js files (but still write the export too to a .ts file!)
 - string and not String, number and not Number in TS:
 https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html
@@ -40,6 +43,7 @@ let myResponse : Response<number> =
 # ECMAScript features to be added 
 ES2020:
 Optional chaining: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining 
+```
 const adventurer = {
   name : "Admundsen",
   country : "Denmark",
@@ -54,11 +58,34 @@ const adventurer = {
 
 const dogName = adventurer.dog?.name;
 console.log(dogName);  
-1:Sparky, 2:undefined, 3:undefined, 
-4:null, 5:undefined, 6:undefined
----
-terniary operator - conditional operator
----
-promises and chaining functions that return something of same type as previous, so next function call can be added.
+```
+Answers below:  
 
+Spoiler alert 1
+
+These would be printed in the cases 1-6:
+
+Spoiler alert 2
+
+---
+
+1. Sparky
+2. undefined
+3. undefined
+4. null
+5. undefined
+6. undefined
+
+---
+
+## Ternary operator - conditional operator   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator
+```a ? b : c     
+//   (if a is true) ? (then (do and/or) return b) : (otherwise do/return c)
+```
+
+---
+## Using Promise based operations
+Using promises by chaining function calls that return something of same type as previous, so next function call can be added:  
+
+Knex example: https://knexjs.org/guide/query-builder.html#leftouterjoin
 
