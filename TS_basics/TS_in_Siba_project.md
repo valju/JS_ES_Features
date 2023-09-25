@@ -39,10 +39,13 @@ let myResponse : Response<number> =
      {success:true, data:[2,3,7]};
 ```
 
------------------------------------------ 
-# ECMAScript features to be added 
-ES2020:
-Optional chaining: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining 
+---
+---
+---
+
+# ECMAScript features to be studied 
+
+## Optional chaining (ES2020): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining 
 ```
 const adventurer = {
   name : "Admundsen",
@@ -77,14 +80,23 @@ Spoiler alert 2
 6. undefined
 
 ---
+Old JS: 
 
-## Ternary operator - conditional operator   https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator
-```a ? b : c     
-//   (if a is true) ? (then (do and/or) return b) : (otherwise do/return c)
+## Ternary operator - conditional operator   
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator
+
+```
+a ? b : c 
+
+//   (if a is true) ? (then do/return b) : (otherwise do/return c)
 ```
 
 ---
 ## Using Promise based operations
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises 
+
 Using promises by chaining function calls that return something of same type as previous, so next function call can be added:  
 
 Knex example: https://knexjs.org/guide/query-builder.html#leftouterjoin
