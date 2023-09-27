@@ -33,7 +33,7 @@ fooar2("Joe");
 // What are these???
 (() => 42)();
 
-(abc => abc+42)(11);                //   => "1142"
+(abc => abc+42)(11);                //   => 53
 
 
 // IIFE with arrow function

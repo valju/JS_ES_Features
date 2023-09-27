@@ -15,7 +15,7 @@ console.log("***********************************************************");
     // last line/item is identical with others
 
     // DESTRUCTURING ASSIGNMENT ANALYZED
-    // Defining three local consts with the const { } structure
+    // Defining three local consts with the const { } syntax
     // to the local scope!
     // => here {a,b,c} confusingly doesn't mean creating an object!
     const {
@@ -79,7 +79,7 @@ console.log("Put another break point here to see the values in the debugger");
 // Creating a local variable (let) and and object to it:
     let b = [123, 456, 789,];
 
-    // Defining three local consts with the destructure structure
+    // Defining three local consts with the array destructuring syntax
     // to the local scope!
     // => here [a,b,c] again confusingly means something else than creating an (array) object!
     const [jkl,mno,prq] = b;  // Destructure the array a to each const !!!

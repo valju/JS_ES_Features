@@ -71,7 +71,7 @@ var l = {};    // 1. Empty ad-hoc object crated (+2.var defined + 3.assigment)
     let l = {...k};  // exact _copy_ of the object created
 
     let m = {...k};  // exact _copy_ of the object created
-    m.abc=false;     // then changing one property
+    m.abc=false;     // then changing one property value
 
     let n = {...k, abc:false};   // replace field abc
     let o = {...k, def:123, abc:"foobarish"}; 
