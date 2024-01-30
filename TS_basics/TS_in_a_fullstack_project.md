@@ -10,7 +10,7 @@
 
 - function return type definitions after : https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#return-type-annotations
 
-- optional parameters by writing ? after the parameter name https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#optional-properties
+- optional parameters by writing ? after the parameter name https://www.typescriptlang.org/docs/handbook/2/functions.html#optional-parameters 
 
 - union types https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types
 
