@@ -12,13 +12,13 @@
 
 - optional parameters by writing ? after the parameter name https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#optional-properties
 
-- * union types https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types
+- union types https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types
 
 - type assertions with as   (pet as BirdPet) https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-assertions
 
 - type assertions with type unions ( xyz as JwtPayload | string)
 
-- * Literal types https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#literal-types
+- Literal types https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#literal-types
 
 - the lenient/broad/avoidable/temporary type 'any' https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html#any
 
