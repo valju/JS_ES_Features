@@ -1,17 +1,30 @@
 # TypeScript features found in siba-fe or Siba_be source code:
 
 - interface   https://www.typescriptlang.org/docs/handbook/typescript-tooling-in-5-minutes.html#interfaces
+
 - inheritance for interfaces with 'extends'. Including members of previously defined interface.   https://www.typescripttutorial.net/typescript-tutorial/typescript-extend-interface/
 
-- variable type definitions after :
-- function return type definitions after :
-- function parameter type definitions after :
+- variable type definitions after : https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-annotations-on-variables
 
-- optional parameters by writing ? after the parameter name
-- type assertions with as   (pet as BirdPet)
+- function parameter type definitions after : https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#functions
+
+- function return type definitions after : https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#return-type-annotations
+
+- optional parameters by writing ? after the parameter name https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#optional-properties
+
+- * union types https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types
+
+- type assertions with as   (pet as BirdPet) https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-assertions
+
 - type assertions with type unions ( xyz as JwtPayload | string)
 
-- the lenient/broad type: any
+- * Literal types https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#literal-types
+
+- the lenient/broad/avoidable/temporary type 'any' https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html#any
+
+- unknown type https://www.typescriptlang.org/play#example/unknown-and-never
+
+
 - Generic types with type parameters, normal
 ```<T>```  
 or multiple, e.g. 
@@ -19,6 +32,8 @@ or multiple, e.g.
 - in .ts you import from .js files (but still write the export too to a .ts file!)
 - string and not String, number and not Number in TS:
 https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html
+
+- Object types are possibly not yet used in our example case code? https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#object-types 
 
 ```
 // One example with the most commonly used TS features
