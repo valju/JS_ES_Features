@@ -26,7 +26,7 @@
 
 
 - Generic types with type parameters, normal
-```<T>```  
+```<T>```      https://www.typescriptlang.org/docs/handbook/2/generics.html#generic-types
 or multiple, e.g. 
 ```<T<U>>```
 - in .ts you import from .js files (but still write the export too to a .ts file!)
