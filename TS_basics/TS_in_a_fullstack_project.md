@@ -2,7 +2,7 @@
 
 - interface   https://www.typescriptlang.org/docs/handbook/typescript-tooling-in-5-minutes.html#interfaces
 
-- inheritance for interfaces with 'extends'. Including members of previously defined interface.   https://www.typescripttutorial.net/typescript-tutorial/typescript-extend-interface/
+- inheritance for interfaces with 'extends'. Including members of previously defined interface.   https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces 
 
 - variable type definitions after : https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-annotations-on-variables
 
