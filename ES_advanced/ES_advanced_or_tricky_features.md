@@ -192,6 +192,8 @@ Object literal (ad hoc, on the spot created object with JavaScript code) of this
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#New_notations_in_ECMAScript_2015
 Curiosity: In React JSX {{a}} means first going to JS mode using the outer { } and then having that shortened {a} object literal inside
 
+MATERIAALIN TUONTI JATKUU HETKEN KULUTTUA...
+
 <!-- ---------------------------------------------------------------------- -->
 <hr />
 
