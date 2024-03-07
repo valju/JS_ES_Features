@@ -39,7 +39,7 @@ Warning: This is explained wrong 90% of the times in the internet!
 
 For many programmers it must be confusing to pass values that are references and still understand that it IS pass-by-value! When we pass the value of the reference variable, a reference, it’s still pass-by-value.
 
-Here it's explained correctly: https://sentry.io/answers/java-pass-by-reference-or-value/
+Here it's explained correctly: https://sentry.io/answers/java-pass-by-reference-or-value/ <br />
 Shortcut to the picture: https://33fa1ur95-ddf15660f.sentry.dev/static/054e2cecc9697591e99c7c1e2e991d17/d7ab4/heap3.png
 
 Only if we would be able to pass a reference to that original reference variable itself, it would be pass-by-reference! (Then the function could change the value of the original variable, which is only rarely desirable). In JavaScript you CAN change the original object via the copy of the reference you get, but you CANNOT change the original variable.
