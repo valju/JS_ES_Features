@@ -44,7 +44,7 @@ Shortcut to the picture: https://33fa1ur95-ddf15660f.sentry.dev/static/054e2cecc
 
 Only if we would be able to pass a reference to that original reference variable itself, it would be pass-by-reference! (Then the function could change the value of the original variable, which is only rarely desirable). In JavaScript you CAN change the original object via the copy of the reference you get, but you CANNOT change the original variable.
 
-Some languages DO have pass-by-reference. E.g. C/C++/C#. You can recognize the pass-by-reference from keywords next to function paramaters. Like 'out', 'inout', 'ref'. Or that parameter list has ```int& num1``` instead of ```int num1```, and so on in C. Then you are not expected to pass the value of the variable, but a reference to it.
+Some languages DO have pass-by-reference. E.g. C/C++/C#. You can recognize the pass-by-reference from keywords next to function paramaters. Like ```out```, ```inout```, ```ref```. Or that parameter list has ```int& num1``` instead of ```int num1```, and so on in C. Then you are not expected to pass the value of the variable, but a reference to it.
 
 ### Shallow copy vs. Deep copy
 
@@ -58,9 +58,9 @@ Most of the library functions like e.g. sort() or filter() create a shallow copy
 
 - shorter syntax
 - implicit return if no braces around function body {}, (no 'curly brackets')
-- though, what if you want to return an adhoc object like ```{name:"Joe"}```, when the function body curly brackets are missing. Then extra ( ) are needed: ```()=>({name:"Joe"})```
+- though, what if you want to return an adhoc object like ```{name:"Joe"}```, when the function body curly brackets are missing. Then extra ```( )``` are needed: ```()=>({name:"Joe"})```
 - reference 'this' does not refer to the function object itself, but to the object where the function was defined. => this makes arrow functions ideal for event-handler functions in some cases where normal function would not work.
-- no parenthesis () needed around parameter list if exactly one parameter. But writing them still might make code more readable
+- no parenthesis ```()``` needed around parameter list if exactly one parameter. But writing them still might make code more readable
 - always anonymous
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
@@ -152,11 +152,11 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/exp
     * in original.js ```export someObj;``` // named export (multiple items possible)
     * in file using.js ```import {someObj as myObj} from './original';``` // same-named import and possible rename
 
-**Note**: When importing in TypeScript code we import from ".js" not in ".ts" although we are writing it in the ".ts" file. = We need to think beyound the tsc TypeScript compiler and see how the code is actually run in the "dist" folder, with .js files. 
+**Note**: When importing in TypeScript code we import from ```".js"``` not in ".ts" although we are writing it in the ".ts" file. = We need to think beyound the tsc TypeScript compiler and see how the code is actually run in the "dist" folder, with .js files. 
 
 * It replaced the OLD CommonJS way: https://en.wikipedia.org/wiki/CommonJS
-    * in original.js module.exports = someObject; // OLD WAY. Exposing someObject as/from module )
-    * in file using.js var copyOfSomeObject = require('/original.js'); // OLD WAY. getting an instance of it )
+    * in original.js ```module.exports = someObject;``` // OLD WAY. Exposing someObject as/from module )
+    * in file using.js ```var copyOfSomeObject = require('/original.js');``` // OLD WAY. getting an instance of it )
 
 ### extra trailing comma 
 
@@ -209,7 +209,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Dest
 
 ### optional chaining 
 
-Can we try to access the member property or function, or use the value ```undefined``` instead. Happens when the parent item on the left is either: never assigned a value (=```undefined```), explicitly defined with the value ```undefined```, or assigned ```null```:
+Can we try to access the member property or function, or use the value undefined instead. Happens when the parent item on the left is either: never assigned a value (=```undefined```), explicitly defined with the value ```undefined```, or assigned ```null```:
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
 
@@ -247,9 +247,11 @@ https://developer.mozilla.org/en-US/docs/Glossary/IIFE#Examples
 
 ### (EXTRA) (Have we found in our code examples) function that returns a function
 
+```
 const func = () => () => 42;
 
 func()();
+```
 
 ### (Smaller curiosity) JavaScript doesn’t allow identifiers starting with number. 
 
