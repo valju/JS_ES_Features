@@ -57,8 +57,9 @@ Most of the library functions like e.g. sort() or filter() create a shallow copy
 ### arrow function syntax (and few differences)
 
 - shorter syntax
-- implicit return if no braces {}, (no 'curly brackets')
-- reference 'this' does not refer to the function object itself, but to the object where the function was defined.
+- implicit return if no braces around function body {}, (no 'curly brackets')
+- though, what if you want to return an adhoc object like ```{name:"Joe"}```, when the function body curly brackets are missing. Then extra ( ) are needed: ```()=>({name:"Joe"})```
+- reference 'this' does not refer to the function object itself, but to the object where the function was defined. => this makes arrow functions ideal for event-handler functions in some cases where normal function would not work.
 - no parenthesis () needed around parameter list if exactly one parameter. But writing them still might make code more readable
 - always anonymous
 
@@ -151,17 +152,20 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/exp
     * in original.js ```export someObj;``` // named export (multiple items possible)
     * in file using.js ```import {someObj as myObj} from './original';``` // same-named import and possible rename
 
+**Note**: When importing in TypeScript code we import from ".js" not in ".ts" although we are writing it in the ".ts" file. = We need to think beyound the tsc TypeScript compiler and see how the code is actually run in the "dist" folder, with .js files. 
+
 * It replaced the OLD CommonJS way: https://en.wikipedia.org/wiki/CommonJS
     * in original.js module.exports = someObject; // OLD WAY. Exposing someObject as/from module )
     * in file using.js var copyOfSomeObject = require('/original.js'); // OLD WAY. getting an instance of it )
 
 ### extra trailing comma 
 
-Trailing comma was allowed at the end of arrays (=lists) already in old JS ```[1,2,3,]```. ES5 added it to JS object literals ```{name:"Joe",yob:1986,}```and ES8(ES2017) to function calls and fuction definitions ```foo(2,3,)```; 
+Trailing comma was allowed at the end of arrays (=lists) already in old JS ```[1,2,3,]```. ES5 added it to JS object literals ```{name:"Joe",yob:1986,}```and ES8(ES2017) to function calls and function definitions ```foo(2,3,)```; 
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Trailing_commas
 
-**NOTE**: JSON (=*text*) does not allow trailing comma: ```{"name":"Joe","yob":1986}```
+**NOTE**: JSON (=*text*) does not allow trailing comma: ```{"name":"Joe","yob":1986}``` (JSON in e.g. file, or in HTTP request) <br />
+```'{"name":"Joe","yob":1986}'``` (JSON in program as JSON String literal)
 
 ### JS Object literal is not same as JSON!
 
@@ -240,6 +244,12 @@ https://developer.mozilla.org/en-US/docs/Glossary/IIFE
 Possibly learn the first example(s) from here:
 
 https://developer.mozilla.org/en-US/docs/Glossary/IIFE#Examples
+
+### (EXTRA) (Have we found in our code examples) function that returns a function
+
+const func = () => () => 42;
+
+func()();
 
 ### (Smaller curiosity) JavaScript doesn’t allow identifiers starting with number. 
 
