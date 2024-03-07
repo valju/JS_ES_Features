@@ -165,13 +165,17 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Trailing_comma
 
 ### JS Object literal is not same as JSON!
 
-JSON = just text, unless you do something to it. JS Object literal is *code* that generates JS Object to the running app memory when executed.
+JS Object literal is *code* that generates JS Object to the running app memory when executed. JSON = just text, unless you do something to it.
 
 JS Object is in running app memory, JSON text could be saved on disk or sent over internet in HTTP requests.
 
-You can convert between these two with JSON object functions. In some cases some libraries do it for you automatically.
+You can convert between these two with JSON object functions. In some cases some libraries do it for you automatically. Sometimes then you'll get an error when you try to parse (JSON => JS object(s)) something that the library function had already parsed for you ...
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#object_literal_syntax_vs._json
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#Object_literal_notation_vs_JSON
+
+So JSON is not JavaScript, but is text that is compatible with JS object serialization.
 
 ### Computed property name
 
@@ -190,9 +194,64 @@ Another more simple example: ```{[a]:a,[b]:b}```. How to read that?
 Object literal (ad hoc, on the spot created object with JavaScript code) of this kind: ```{ a }``` or ```{ a, b }``` which mean same as ```{ a : a }``` and ```{ a:a, b:b }```
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#New_notations_in_ECMAScript_2015
-Curiosity: In React JSX {{a}} means first going to JS mode using the outer { } and then having that shortened {a} object literal inside
 
-# MATERIAALIN TUONTI JATKUU HETKEN KULUTTUA...
+Curiosity: In React JSX ```{{a}}``` means first going to JS mode using the outer ```{ }``` and then having that shortened ```{a}``` object literal inside
+
+### Destructuring assignment. 
+
+Destructuring assigned object or array values into separate local variables https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+
+### optional chaining 
+
+Can we try to access the member property or function, or use the value ```undefined``` instead. Happens when the parent item on the left is either: never assigned a value (=```undefined```), explicitly defined with the value ```undefined```, or assigned ```null```:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
+
+## OLD JavaScript, But still tricky and good to know
+
+### function parameter default values
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters
+
+### leaving arguments out is only allowed at the end of a function argument list while calling a function
+
+That’s why we need to write e.g. ```( _ , index ) => index % 2 == 0``` where we are marking the skipped parameter with dummy name ```_```. That is counted as a parameter, but not needed/used. We need to write the ```_``` as otherwise index would not be the second parameter like it needs to be. Similar usage: ```( _ => /* whatever_code_here */ )```
+
+### 'falsy' values. The rest are 'truthy' values
+
+Anything that will be considered false while e.g. given to if condition: ```if(a)``` 
+
+https://developer.mozilla.org/en-US/docs/Glossary/Falsy
+
+https://developer.mozilla.org/en-US/docs/Glossary/Truthy 
+
+Equality charts then are a joke in JavaScript, and one of the reasons why TypeScript was defined to replace JavaScript: e.g. 
+
+https://algassert.com/visualization/2014/03/27/Better-JS-Equality-Table.html 
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#equality_operators 
+
+### IIFE - Immediately Invoked Function Expression
+
+https://developer.mozilla.org/en-US/docs/Glossary/IIFE 
+
+Possibly learn the first example(s) from here:
+
+https://developer.mozilla.org/en-US/docs/Glossary/IIFE#Examples
+
+### (Smaller curiosity) JavaScript doesn’t allow identifiers starting with number. 
+
+But what if you get a property from the JSON text ```{"123":"Yeah"}``` and parse it as an JavaScript object?
+
+```
+var a = JSON.parse('{”123”:”Yeah”}');
+console.log(a.123); // Error, unexpected number 
+console.log(a.”123”); // Error, unexpected String 
+console.log(a[”123”]); // ok, prints: Yeah 
+console.log(a[123]); // ok, prints: Yeah
+``` 
+
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#Accessing_properties
 
 <!-- ---------------------------------------------------------------------- -->
 <hr />
@@ -201,7 +260,7 @@ Curiosity: In React JSX {{a}} means first going to JS mode using the outer { } a
 
 https://github.com/valju/JS_ES_Features/blob/master/TS_basics/TS_in_a_fullstack_project.md
 
-## (in Finnish) TypeScript lecture here
+## (in Finnish) TypeScript start lecture notes here
 
 https://github.com/haagahelia/ohke-teknologiat/tree/master/01_typescript
 
