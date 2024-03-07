@@ -91,9 +91,9 @@ The collection objects, see the "Methods" <br />
 
 #### .forEach() - 'vanilla function'
 .forEach method for many kind of collections: 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/forEach
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/forEach
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach <br />
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/forEach <br />
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/forEach <br />
 
 #### .map() - like previous and adds creation of a new 
 .map method https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
@@ -108,8 +108,8 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 .reduce method https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
 
 #### .slice() vs .splice()
-.slice method https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
-.splice method (mutates the original array!) https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+.slice method https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice  <br />
+.splice method (mutates the original array!) https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice  <br />
 
 These ones are good examples for learning to read the documentation carefully.
 
@@ -119,7 +119,7 @@ These ones are good examples for learning to read the documentation carefully.
 
 ## ECMAScript ES5 (2009), (ES6) ES2015, and beyond
 
-### ES2015 Class syntax is skipped this time (nowadays functional approach is more common)
+### ES2015 Class syntax is skipped this time (nowadays functional approach is more widely used)
 
 (((class syntax https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/class)))
 
@@ -129,7 +129,7 @@ These ones are good examples for learning to read the documentation carefully.
 
 ### template literals
 
-with backticks ``` `  ` ```and injecting JavaScript expressions with ```${ }``` to get rid of this kind of String concatenation clumsiness: ```"Hello" +name+"!" ```
+String defined with backticks ``` `  ` ```and injecting JavaScript expressions with ```${ }``` to get rid of this kind of String concatenation clumsiness: ```"Hello" +name+"!" ```
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
 
@@ -177,7 +177,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Obje
 
 So JSON is not JavaScript, but is text that is compatible with JS object serialization.
 
-### Computed property name
+### computed property name
 
 Property accessor used so that its name is not a hard-coded string like normally, but comes from a values of a variable:
 
@@ -197,13 +197,16 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Obje
 
 Curiosity: In React JSX ```{{a}}``` means first going to JS mode using the outer ```{ }``` and then having that shortened ```{a}``` object literal inside
 
-### Destructuring assignment. 
+### destructuring assignment. 
 
-Destructuring assigned object or array values into separate local variables https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+Destructuring assigned object or array values into separate local variables 
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
 
 ### optional chaining 
 
 Can we try to access the member property or function, or use the value ```undefined``` instead. Happens when the parent item on the left is either: never assigned a value (=```undefined```), explicitly defined with the value ```undefined```, or assigned ```null```:
+
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
 
 ## OLD JavaScript, But still tricky and good to know
