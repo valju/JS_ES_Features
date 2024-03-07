@@ -84,10 +84,10 @@ Here your code calls the Array method once, and often passes your code/function 
 
 Notice that most or all of these methods create shallow copies or otherwise point at the same second level objects as the original collection did!
 
-The collection objects, see the "Methods"
-(Array: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
-(Map: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/)
-(Set: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/)
+The collection objects, see the "Methods" <br />
+(Array: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) <br />
+(Map: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/) <br />
+(Set: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/) <br />
 
 #### .forEach() - 'vanilla function'
 .forEach method for many kind of collections: 
