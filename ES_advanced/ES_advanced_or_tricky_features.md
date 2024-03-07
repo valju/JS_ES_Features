@@ -90,7 +90,7 @@ The collection objects, see the "Methods" <br />
 (Set: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/) <br />
 
 #### .forEach() - 'vanilla function'
-.forEach method for many kind of collections: 
+.forEach method for many kind of collections: <br />
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach <br />
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/forEach <br />
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/forEach <br />
