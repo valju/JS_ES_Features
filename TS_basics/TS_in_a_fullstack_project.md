@@ -29,8 +29,10 @@
 ```<T>```      https://www.typescriptlang.org/docs/handbook/2/generics.html#generic-types
 or multiple, e.g. 
 ```<T<U>>```
+
 - in .ts you import from .js files (but still write the export too to a .ts file!)
-- string and not String, number and not Number in TS:
+
+- string and not String, number and not Number in TS (apart from constructors, then String(42), Number("42") ):
 https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html
 
 - Object types are possibly not yet used in our example case code? https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#object-types 
