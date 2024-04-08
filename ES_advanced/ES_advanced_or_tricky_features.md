@@ -141,7 +141,7 @@ The spread notation/spread syntax ```...``` to make ‘a bit deeper, still shall
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator
 
 
-### ES2015 export and import from a module to another (default export or named export) 
+### export and import (ES2015) from a module to another (default export or named export) 
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export
 
@@ -209,7 +209,9 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Dest
 
 ### optional chaining 
 
-Can we try to access the member property or function, or use the value undefined instead. Happens when the parent item on the left is either: never assigned a value (=```undefined```), explicitly defined with the value ```undefined```, or assigned ```null```:
+Can we try to access the member property or member function, or use the value ```undefined``` instead. 
+
+Happens when the parent item on the left is either: never assigned a value (=```undefined```), explicitly defined with the value ```undefined```, or assigned the value ```null```:
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
 
@@ -236,6 +238,10 @@ Equality charts then are a joke in JavaScript, and one of the reasons why TypeSc
 https://algassert.com/visualization/2014/03/27/Better-JS-Equality-Table.html 
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#equality_operators 
+
+### ternary operator (conditional operator)    a ? b : c
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator
 
 ### IIFE - Immediately Invoked Function Expression
 
@@ -268,6 +274,43 @@ console.log(a[123]); // ok, prints: Yeah
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#Accessing_properties
 
+### Function expression and Function statement lead to same nowadays
+
+```
+
+// more modern: function expression
+let myFunc = function(name) {
+    console.log("Hello "+name+!);
+};
+
+// old way, and leads to same as previous nowadays: function statement
+function myFunc (name) {
+    console.log("Hello "+name+!);
+}
+
+```
+
+
+## Most likely not in 9.4.2024 exam, but after that yes:
+
+### || (OR) used not inside any condition, but to decide what value to assign in an assignment
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR
+
+#### Not to be confused with OR-assignment:
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR_assignment
+
+
+### && (AND) used not inside any condition, but to decide what value to assign in an assignment
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND
+
+#### Not to be confused with AND-assignment:
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND_as
+
+
 <!-- ---------------------------------------------------------------------- -->
 <hr />
 
@@ -278,4 +321,3 @@ https://github.com/valju/JS_ES_Features/blob/master/TS_basics/TS_in_a_fullstack_
 ## (in Finnish) TypeScript start lecture notes here
 
 https://github.com/haagahelia/ohke-teknologiat/tree/master/01_typescript
-

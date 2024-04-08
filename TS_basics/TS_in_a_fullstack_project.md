@@ -20,7 +20,7 @@
 
 - Literal types https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#literal-types
 
-- the lenient/broad/avoidable/temporary type 'any' https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html#any
+- any - the lenient/broad but avoidable temporary type 'any' used while moving from ES to TS https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html#any
 
 - unknown type https://www.typescriptlang.org/play#example/unknown-and-never
 
