@@ -15,4 +15,7 @@ Checked 2024-08-19
 * TypeScript (using npm i)
 * MariaDB (Community edition)
 * DBeaver
+* Docker Desktop (on Windows)
+
+Non-Windows machines: Install the corresponding tools.
 
