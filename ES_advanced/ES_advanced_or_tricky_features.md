@@ -59,7 +59,7 @@ Most of the library functions like e.g. sort() or filter() create a shallow copy
 - shorter syntax
 - implicit return if no braces around function body {}, (no 'curly brackets')
 - though, what if you want to return an adhoc object like ```{name:"Joe"}```, when the function body curly brackets are missing. Then extra ```( )``` are needed: ```()=>({name:"Joe"})```
-- reference 'this' does not refer to the function object itself, but to the object where the function was defined. => this makes arrow functions ideal for event-handler functions in some cases where normal function would not work.
+- reference 'this' does not refer to the arrow function object itself, but to the object where the arrow function was defined. => this makes arrow functions ideal for event-handler functions in some cases where normal function would not work out of box.
 - no parenthesis ```()``` needed around parameter list if exactly one parameter. But writing them still might make code more readable
 - always anonymous
 
@@ -149,10 +149,10 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/exp
     * in original.js ```export default someObj;``` // default export (one per module)
     * in file using.js ```import myObj from './original';``` // default import and naming it as ‘myObj’
 * Named export & import
-    * in original.js ```export someObj;``` // named export (multiple items possible)
+    * in original.js ```export const someObj;``` // named export (multiple items possible)
     * in file using.js ```import {someObj as myObj} from './original';``` // same-named import and possible rename
 
-**Note**: When importing in TypeScript code we import from ```".js"``` not in ".ts" although we are writing it in the ".ts" file. = We need to think beyound the tsc TypeScript compiler and see how the code is actually run in the "dist" folder, with .js files. 
+**Note**: When importing in TypeScript code we import from ```".js"``` not from ".ts" although we are writing it in the ".ts" file. = We need to think beyound the tsc TypeScript compiler and see how the code is actually run in the "dist" or "build" folder, with the .js files. 
 
 * It replaced the OLD CommonJS way: https://en.wikipedia.org/wiki/CommonJS
     * in original.js ```module.exports = someObject;``` // OLD WAY. Exposing someObject as/from module )
