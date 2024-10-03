@@ -112,8 +112,8 @@ let answer = (function () {
 // - skipping first parameter with dummy parameter name _ 
 // - skipping the third parameter (reference to original array) by not defining it
 
-const peopleArray = ['Adam', 'Bertha', 'Cecily', 'Elvis', 'Lewis', 'Adam'];
-const firstTeam = peopleArray.filter((_, index) => index % 2 == 0);
+const peopleArray = ['Adam', 'Bertha', 'Cecily', 'Elvis', 'Lewis', 'Mike'];
+const firstTeam = peopleArray.filter((_, index) => index % 2 === 0);
 console.log("*** Every second name ***");
 console.dir(firstTeam);
 
