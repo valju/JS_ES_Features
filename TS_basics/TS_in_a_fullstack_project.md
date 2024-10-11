@@ -1,38 +1,41 @@
 # TypeScript features found in siba-fe or Siba_be source code:
 
-- interface   https://www.typescriptlang.org/docs/handbook/typescript-tooling-in-5-minutes.html#interfaces
+- **interface**   https://www.typescriptlang.org/docs/handbook/typescript-tooling-in-5-minutes.html#interfaces
 
-- inheritance for interfaces with 'extends'. Including members of previously defined interface.   https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces 
+- inheritance for interfaces with '**extends**'. Including members of previously defined interface.   https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces 
 
-- variable type definitions after : https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-annotations-on-variables
+- **variable type definitions** after : https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-annotations-on-variables
 
-- function parameter type definitions after : https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#functions
+- **function parameter type definitions** after : https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#functions
 
-- function return type definitions after : https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#return-type-annotations
+- **function return type definitions** after : https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#return-type-annotations
 
-- optional parameters by writing ? after the parameter name https://www.typescriptlang.org/docs/handbook/2/functions.html#optional-parameters 
+- **optional parameters** by writing ? after the parameter name https://www.typescriptlang.org/docs/handbook/2/functions.html#optional-parameters 
 
-- union types https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types
+- **union types** https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types
 
-- type assertions with as   (pet as BirdPet) https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-assertions
+- **type assertions with as**   (pet as BirdPet) https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-assertions
 
-- type assertions with type unions ( xyz as JwtPayload | string)
+- **type assertions with type unions** ( xyz as JwtPayload | string)
 
-- Literal types https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#literal-types
+- **Literal types** https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#literal-types
 
-- any - the lenient/broad but avoidable temporary type 'any' used while moving from ES to TS https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html#any
+- **any** - the lenient/broad but avoidable temporary type 'any' used while moving from ES to TS https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html#any
 
-- unknown type https://www.typescriptlang.org/play#example/unknown-and-never
+- **unknown** type https://www.typescriptlang.org/play#example/unknown-and-never
 
+- ... then in code ... **type narrowing** https://www.typescriptlang.org/docs/handbook/2/narrowing.html 
+https://www.typescriptlang.org/docs/handbook/2/narrowing.html#typeof-type-guards
+https://www.typescriptlang.org/docs/handbook/2/narrowing.html#instanceof-narrowing 
 
-- Generic types with type parameters, normal
+- **Generic types** with type parameters, normal
 ```<T>```      https://www.typescriptlang.org/docs/handbook/2/generics.html#generic-types
 or multiple, e.g. 
 ```<T<U>>```
 
-- in .ts you import from .js files (but still write the export too to a .ts file!)
+- in .ts code files you **import from .js files** (but still write the export too in a .ts file!)
 
-- string and not String, number and not Number in TS (apart from constructors, then String(42), Number("42") ):
+- **string** and not String, **number** and not Number in TS (apart from constructors, then String(42), Number("42") ):
 https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html
 
 - Object types are possibly not yet used in our example case code? https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#object-types 
