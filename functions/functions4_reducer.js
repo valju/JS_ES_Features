@@ -1,12 +1,17 @@
-const array1 = [1, 2, 3, 4];
+const array1 = [-2, -1, 3, -4];
 
-const myReducer = (previousValue, currentValue) => {
-  	console.log("previousValue:"+previousValue+", currentValue:"+currentValue);
-	return (previousValue + currentValue);
+const myReducer = (balanceSoFar, nextValue) => {
+	if(nextValue>=0) {
+		return balanceSoFar+1;
+	} else {
+		return balanceSoFar-1;
+	}
 };
 
+let initialValue = 0;
+
 // 1 + 2 + 3 + 4
-console.log(array1.reduce(myReducer));
+console.log(array1.reduce(myReducer,initialValue));
 // expected output: 10
 
 // 1,2 => 3
