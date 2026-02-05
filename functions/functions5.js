@@ -19,7 +19,8 @@ let func1 = (a, ...b) => {
 // Here all three different meanings for ... are used on 
 // just two lines, third and fourth.
 
-export const useThemeStore = create < StoreState > ()(
+/*
+export const useThemeStore = create()(
     persist(
         (...a) => ({
             ...createThemeSlice(...a),
@@ -30,24 +31,37 @@ export const useThemeStore = create < StoreState > ()(
         }
     )
 );
+*/
 
 // TEMP, need to build a full example soonish
 
-const obj = { foo: 34, bar: 56 };
+console.log("------ Object initially --------");
+const obj = { foo: 11, bar: 22 };
 console.log({ ...obj });
 
 
-const func2 = (obj, ...a) => {
+const func2 = (someObj, ...a) => {
 
+    console.log("------ 'rest of the parameters' array. and spreading it with array spread --------");
+    console.log("log the a array:" + a);
+    console.log("dir the a array:\b");
+    console.dir(a);
+    console.log("log the a array as JSON:" + JSON.stringify(a));
+
+    console.log("log the a array spread:");
+    console.log("\b");
     console.log(...a);
-    console.log(a);
-    console.log(JSON.stringify(a));
+    console.log("log the a array spread as JSON:" + JSON.stringify(...a));
 
-    let something = { ...obj, extra: "Hello!" };
+    console.log("------ using the Object spread operator --------");
+
+    let something = { ...someObj, extra: "Hello!" };
+    console.log("log the new object: ");
     console.log(something);
+    console.log("dir the new object:\b");
     console.dir(something);
 };
 
-func2(3, 4, 5);
+func2(obj, 3, 4, 5);
 
 
