@@ -134,12 +134,18 @@ String defined with backticks ``` `  ` ```and injecting JavaScript expressions w
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
 
-### spread operator
+### spread operator ...
 
-The spread notation/spread syntax ```...``` to make ‘a bit deeper, still shallow copy’ of an object, instead of the ‘totally shallow copy’. Copying goes one level deep = the properties/items of the original and copy object are separate. (But those separate properties/items may then contain references to exactly same objects) 
+The spread notation/spread syntax ```...``` to make ‘a bit deeper, still shallow copy’ of an object or array, instead of the ‘totally shallow copy’. Copying goes one level deep = the object properties/ array items of the original and the copy are separate. (But those separate properties/items may then contain references to exactly same objects, the second level might already reveal the shallows copy) 
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator
 
+### "rest" parameters/arguments of a function (also with ...)
+
+The "rest" parameter/argument collection of function. The "rest" here meaning the rest of the flexible
+number of parameters ("the others, rest of them"). (And NOT to REST API, not at all)
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters 
 
 ### export and import (ES2015) from a module to another (default export or named export) 
 
