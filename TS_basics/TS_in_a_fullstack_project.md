@@ -35,7 +35,10 @@ or multiple, e.g.
 
 - in .ts code files you **import from .js files** (but still write the export too in a .ts file!)
 
-- **string** and not String, **number** and not Number in TS (apart from constructors, then String(42), Number("42") ):
+- ES export & import augmented by TS **export type** / **import type**. Then only the types are imported to be used in type checking, but not the implementation = not the objects (e.g. function objects).
+https://www.typescriptlang.org/docs/handbook/2/modules.html#typescript-specific-es-module-syntax
+
+- **string** and not String, **number** and not Number in TS (apart from constructors, then String(42), Number("42") )
 https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html
 
 - Object types are possibly not yet used in our example case code? https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#object-types 
@@ -55,8 +58,11 @@ export interface Response<T> {
 // Type parameter T will be replace by the real type 
 // you want to use
 
-let myResponse : Response<number> = 
-     {success:true, data:[2,3,7]};
+let myResponse : Response<number> = {
+  success: true, 
+  data: [2,3,7]
+};
+
 ```
 
 ---
@@ -121,3 +127,6 @@ Using promises by chaining function calls that return something of same type as 
 
 Knex example: https://knexjs.org/guide/query-builder.html#leftouterjoin
 
+## More TS features:
+- import type
+- Record<key, value>

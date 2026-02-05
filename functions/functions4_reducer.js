@@ -1,17 +1,19 @@
-const array1 = [-2, -1, 3, -4];
+const array1 = [-999, -1, 3, -4];
 
 const myReducer = (balanceSoFar, nextValue) => {
-	if(nextValue>=0) {
-		return balanceSoFar+1;
+	if (nextValue >= 0) {
+		return balanceSoFar + 1;
 	} else {
-		return balanceSoFar-1;
+		return balanceSoFar - 1;
 	}
 };
 
 let initialValue = 0;
+console.log("Balance of pos and neg numbers:" + array1.reduce(myReducer, initialValue));
 
+
+// Old example with just sum
 // 1 + 2 + 3 + 4
-console.log(array1.reduce(myReducer,initialValue));
 // expected output: 10
 
 // 1,2 => 3
@@ -20,11 +22,11 @@ console.log(array1.reduce(myReducer,initialValue));
 // our reducer function run 3 times! (because no initial value given, first used as initial)
 
 // 5 + 1 + 2 + 3 + 4
-console.log(array1.reduce(myReducer, 5));
+// console.log(array1.reduce(myReducer, 5));
 // expected output: 15
 
 // 5,1 => 6
 // 6,2 => 8
 // 8,3 => 11
-// 11,4 => 15  
+// 11,4 => 15
 // our reducer function run 4 times! (because initial value given, first used as first nextValue)
