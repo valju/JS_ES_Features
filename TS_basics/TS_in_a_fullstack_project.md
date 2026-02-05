@@ -36,7 +36,8 @@ or multiple, e.g.
 - in .ts code files you **import from .js files** (but still write the export too in a .ts file!)
 
 - ES export & import augmented by TS **export type** / **import type**. Then only the types are imported to be used in type checking, but not the implementation = not the objects (e.g. function objects).
-https://www.typescriptlang.org/docs/handbook/2/modules.html#typescript-specific-es-module-syntax
+https://www.typescriptlang.org/docs/handbook/2/modules.html#import-type
+https://www.typescriptlang.org/docs/handbook/2/modules.html#inline-type-imports 
 
 - **string** and not String, **number** and not Number in TS (apart from constructors, then String(42), Number("42") )
 https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html
