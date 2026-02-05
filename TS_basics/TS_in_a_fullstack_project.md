@@ -39,7 +39,7 @@ or multiple, e.g.
 https://www.typescriptlang.org/docs/handbook/2/modules.html#import-type
 https://www.typescriptlang.org/docs/handbook/2/modules.html#inline-type-imports 
 
-- **string** and not String, **number** and not Number in TS (apart from constructors, then String(42), Number("42") )
+- Write **string** and not String, **number** and not Number in TS (apart from constructors, **then** ***S***tring(42), ***N***umber("42") )
 https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html
 
 - Object types are possibly not yet used in our example case code? https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#object-types 
