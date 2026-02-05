@@ -284,15 +284,20 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Obje
 
 ```
 
-// more modern: function expression
-let myFunc = function(name) {
-    console.log("Hello "+name+!);
-};
-
 // old way, and leads to same as previous nowadays: function statement
 function myFunc (name) {
-    console.log("Hello "+name+!);
+    console.log("Hello "+name+"!");
 }
+
+// bit more modern: function expression
+let myFunc = function(name) {
+    console.log("Hello "+name+"!");
+};
+
+// most modern: arrow function expression
+let myFunc = (name) => {
+    console.log("Hello "+name+"!");
+};
 
 ```
 
