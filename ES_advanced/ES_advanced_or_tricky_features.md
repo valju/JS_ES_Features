@@ -321,6 +321,29 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logi
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND_assignment
 
+### Latest ECMAScript features ###
+
+#### Set Methods: Native methods like union(), intersection(), difference(), and symmetricDifference() simplify set theory operations without external libraries.
+
+elements which are in either or both sets:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/union
+
+elements in both this set and the given set:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/intersection
+
+elements which are in either this set or the given set, but not in both:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/difference
+
+elements which are in either this set or the given set, but not in both:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/symmetricDifference
+
+
+
+#### Iterator Helpers: Built-in functional operators and utilities for processing data streams efficiently.
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator
+
+#### Array.fromAsync: Asynchronously creates an array from async or sync iterables.
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fromAsync
 
 <!-- ---------------------------------------------------------------------- -->
 <hr />
@@ -329,6 +352,6 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logi
 
 https://github.com/valju/JS_ES_Features/blob/master/TS_basics/TS_in_a_fullstack_project.md
 
-## (in Finnish) TypeScript start lecture notes here
+## TypeScript start lecture notes here
 
-https://github.com/haagahelia/ohke-teknologiat/tree/master/01_typescript
+https://github.com/valju/JS_ES_Features/blob/master/TS_basics/TypeScript_usage_understood.pdf

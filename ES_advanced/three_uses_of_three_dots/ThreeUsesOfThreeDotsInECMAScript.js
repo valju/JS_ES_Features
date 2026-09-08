@@ -1,8 +1,8 @@
 // Example of three different ...    :s
 
 let func1 = (a, ...b) => {
-   let something = {...a};
-   foo(...b);
+  let something = { ...a };
+  foo(...b);
 };
 
 // All these three ... have different meanings. 
