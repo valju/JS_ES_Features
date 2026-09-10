@@ -31,9 +31,11 @@ https://www.typescriptlang.org/docs/handbook/2/narrowing.html#instanceof-narrowi
 - **Generic types** with type parameters, normal
 ```<T>```      https://www.typescriptlang.org/docs/handbook/2/generics.html#generic-types
 or multiple, e.g. 
-```<T<U>>```
+```<T, U> 
+// or nested:
+ <T<U>>```
 
-- in .ts code files you **import from .js files** (but still write the export too in a .ts file!)
+- Note: **In some module systems and TS configurations** in .ts code files you **import from .js files** (but still write the export too in a .ts file!)
 
 - ES export & import augmented by TS **export type** / **import type**. Then only the types are imported to be used in type checking, but not the implementation = not the objects (e.g. function objects).
 https://www.typescriptlang.org/docs/handbook/2/modules.html#import-type
@@ -77,12 +79,12 @@ let myResponse : Response<number> = {
 const adventurer = {
   name : "Admundsen",
   country : "Denmark",
-1)dog : {name:"Sparky"},
-2)dog : undefined,
-3)dog : null,
-4)dog : {name:null},
-5)
-6)dog : {nickname:"Spotty"},
+  dog : {name:"Sparky"},        // option 1
+  //dog : undefined,            // option 2
+  //dog : null,                 // option 3
+  //dog : {name:null},          // option 4
+  //                            // option 5, not even mentioning dog
+  //dog : {nickname:"Spotty"},  // option 6
 
 };
 
@@ -124,9 +126,35 @@ a ? b : c
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises 
 
-Using promises by chaining function calls that return something of same type as previous, so next function call can be added:  
+Promise chains pass the value returned by one callback to the next
+callback. A callback may return a value of a different type or another
+promise. If it returns a promise, the chain waits for that promise:
+```
+fetch("/api/user")
+  .then(response => response.json())
+  .then(user => {
+    console.log(user.name);
+  })
+  .catch(error => {
+    console.error(error);
+  });
+```
 
-Knex example: https://knexjs.org/guide/query-builder.html#leftouterjoin
+
+
+## Method chains that look like promises, but aren't. Function call returns
+query builder that can be further called by another method. Knex example: 
+https://knexjs.org/guide/query-builder.html#leftouterjoin
+```
+knex('users')
+  .groupBy('count')
+  .orderBy('name', 'desc')
+  .havingRaw('count > ?', [100]);
+```
+
+// Note: Knex query builders are also thenable, so `await` or
+`.then()` can execute the built query. So you can use promises around this 
+last example.
 
 ## More TS features:
 - import type

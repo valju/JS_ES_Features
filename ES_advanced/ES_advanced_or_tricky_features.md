@@ -15,9 +15,9 @@ Reliables links of information are provided. Only read as much from each link as
 ## Older versions of ECMAScript/JavaScript already have some things you need to master
 
 ### Until ES6 we only had problematic ‘var’
-- with only two possible scopes: function and global.
+- with only two possible scopes: function and global. (Exception: when using modules, then module-wide scope).
 - function scope with var hoisting that did cause some risks if not coding well.
-- with implicit global vars, which was bad style (just use a variable without ever defining it)
+- with implicit global 'vars', which was bad style (just use a variable without ever defining it = omitting even the 'var')
 
 ### let
 
@@ -52,14 +52,16 @@ Shallow copy (first layer of references/objects is duplicated as separate object
 
 Deep copy (all objects in the, even deeper object structure, are duplicated as separate objects and the original objects are safely separate) https://developer.mozilla.org/en-US/docs/Glossary/Deep_copy 
 
-Most of the library functions like e.g. sort() or filter() create a shallow copy of the array. So *beware of shallow copies* and don't accidentally modify same objects that the original array still refers to!
+Most of the library functions like e.g. map(), filter(), slice() create a shallow copy of the original array. So *beware of shallow copies* and don't accidentally modify same objects that the original array still refers to!
 
 ### arrow function syntax (and few differences)
 
 - shorter syntax
 - implicit return if no braces around function body {}, (no 'curly brackets')
 - though, what if you want to return an adhoc object like ```{name:"Joe"}```, when the function body curly brackets are missing. Then extra ```( )``` are needed: ```()=>({name:"Joe"})```
-- reference 'this' does not refer to the arrow function object itself, but to the object where the arrow function was defined. => this makes arrow functions ideal for event-handler functions in some cases where normal function would not work out of box.
+- Arrow functions do not have their own `this`. They capture the `this`
+  value from the surrounding lexical context, meaning the surrounding
+  non-arrow function or the outer execution environment.
 - no parenthesis ```()``` needed around parameter list if exactly one parameter. But writing them still might make code more readable
 - always anonymous
 
@@ -81,9 +83,10 @@ This can be called IIFE (Immediately Invoked Function Expression, this time made
 
 There are many Array methods, here only the most common ones. Read the documentation for what happens with empty array and other special cases.
 
-Here your code calls the Array method once, and often passes your code/function as input to that system method. The environment then internally calls your method as many times as needed.
+Here your code calls the Array method once, and often passes your code/function as input to that system method. The environment then internally calls your method as many times as needed, providing e.g. currently handled item, current index and/or the whole collection object reference to
+each call.
 
-Notice that most or all of these methods create shallow copies or otherwise point at the same second level objects as the original collection did!
+Notice that many of these methods create shallow copies or otherwise point at the same second level objects as the original collection did!
 
 The collection objects, see the "Methods" <br />
 (Array: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) <br />
@@ -155,14 +158,14 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/exp
     * in original.js ```export default someObj;``` // default export (one per module)
     * in file using.js ```import myObj from './original';``` // default import and naming it as ‘myObj’
 * Named export & import
-    * in original.js ```export const someObj;``` // named export (multiple items possible)
+    * in original.js ```export const someObj = {};``` // named export (multiple items possible)
     * in file using.js ```import {someObj as myObj} from './original';``` // same-named import and possible rename
 
-**Note**: When importing in TypeScript code we import from ```".js"``` not from ".ts" although we are writing it in the ".ts" file. = We need to think beyound the tsc TypeScript compiler and see how the code is actually run in the "dist" or "build" folder, with the .js files. 
+**Note**: Depending on the used module system, sometimes importing in TypeScript code requires import from ```".js"``` files (tsc compiled file) not from ".ts" files although we are writing the import in the ".ts" file (source file). = Sometimes we need to think beyound the tsc TypeScript compiler and see how the code is actually run in the "dist" or "build" folder, with the .js files. 
 
 * It replaced the OLD CommonJS way: https://en.wikipedia.org/wiki/CommonJS
     * in original.js ```module.exports = someObject;``` // OLD WAY. Exposing someObject as/from module )
-    * in file using.js ```var copyOfSomeObject = require('/original.js');``` // OLD WAY. getting an instance of it )
+    * in file using.js ```var copyOfSomeObject = require('./original.js');``` // OLD WAY. getting an instance of it )
 
 ### extra trailing comma 
 
@@ -221,7 +224,7 @@ Happens when the parent item on the left is either: never assigned a value (=```
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
 
-## OLD JavaScript, But still tricky and good to know
+## Traditional JavaScript, But still tricky and good to know
 
 ### function parameter default values
 
@@ -239,7 +242,7 @@ https://developer.mozilla.org/en-US/docs/Glossary/Falsy
 
 https://developer.mozilla.org/en-US/docs/Glossary/Truthy 
 
-Equality charts then are a joke in JavaScript, and one of the reasons why TypeScript was defined to replace JavaScript: e.g. 
+Equality charts then are a joke in JavaScript, and one of the reasons why TypeScript was defined to replace writing JavaScript directly: e.g. 
 
 https://algassert.com/visualization/2014/03/27/Better-JS-Equality-Table.html 
 
@@ -270,10 +273,10 @@ func()();
 But what if you get a property from the JSON text ```{"123":"Yeah"}``` and parse it as an JavaScript object?
 
 ```
-var a = JSON.parse('{”123”:”Yeah”}');
+var a = JSON.parse('{"123":"Yeah"}');
 console.log(a.123); // Error, unexpected number 
-console.log(a.”123”); // Error, unexpected String 
-console.log(a[”123”]); // ok, prints: Yeah 
+console.log(a."123"); // Error, unexpected String 
+console.log(a["123"]); // ok, prints: Yeah 
 console.log(a[123]); // ok, prints: Yeah
 ``` 
 
@@ -321,7 +324,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logi
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND_assignment
 
-### Latest ECMAScript features ###
+### Selected newer ECMAScript features, reviewed in Fall 2026 ###
 
 #### Set Methods: Native methods like union(), intersection(), difference(), and symmetricDifference() simplify set theory operations without external libraries.
 
@@ -331,7 +334,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 elements in both this set and the given set:
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/intersection
 
-elements which are in either this set or the given set, but not in both:
+elements in the first set that are not in the second:
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/difference
 
 elements which are in either this set or the given set, but not in both:
