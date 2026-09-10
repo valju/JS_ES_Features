@@ -12,6 +12,8 @@
 
 - **optional parameters** by writing ? after the parameter name https://www.typescriptlang.org/docs/handbook/2/functions.html#optional-parameters 
 
+- **optional properties** by writing ? after the property name https://www.typescriptlang.org/docs/handbook/2/objects.html#optional-properties 
+
 - **union types** https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types
 
 - **type assertions with as**   (pet as BirdPet) https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-assertions
