@@ -97,7 +97,7 @@ const adventurer = {
 };
 
 const dogName = adventurer.dog?.name;
-console.log(dogName);  
+console.log(dogName);           // Think what will be printed here in cases 1-6 ???
 ```
 Answers below:  
 
