@@ -32,10 +32,16 @@ https://www.typescriptlang.org/docs/handbook/2/narrowing.html#instanceof-narrowi
 
 - **Generic types** with type parameters, normal
 ```<T>```      https://www.typescriptlang.org/docs/handbook/2/generics.html#generic-types
-or multiple, e.g. 
-```<T, U> 
+ 
+```
+// or multiple, e.g.
+
+<T, U> 
+
 // or nested:
- <T<U>>```
+
+<T<U>>
+```
 
 - Note: **In some module systems and TS configurations** in .ts code files you **import from .js files** (but still write the export too in a .ts file!)
 
